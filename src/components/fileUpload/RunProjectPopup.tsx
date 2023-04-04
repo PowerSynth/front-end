@@ -18,7 +18,7 @@ const Modal: React.FC<ModalProps> = ({onBackdropClick}) => {
             <p className="title">Upload file</p>
             <FileUpload />
         </div>
-    </div>, 
+    </div>,
     document.getElementById('WelcomePage')!);
 }
 

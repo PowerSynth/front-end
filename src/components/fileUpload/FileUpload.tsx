@@ -15,7 +15,7 @@ const FileUpload = () => {
                 </button>
             </div>
             <p className="main">Upload .txt file</p>
-        </div> 
+        </div>
     )
 };
 export default FileUpload

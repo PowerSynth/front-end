@@ -29,7 +29,7 @@ const WelcomePage: React.FC = () => {
 			<button onClick={handleCreateProject}>Create Project</button>
 			<button onClick={handleRunProject}>Run Project</button>
 			<RunProjectPopupWrapper isModalVisible={isModalVisible} onBackdropClick={handleRunProject} />
-			
+
 		</div>
 	);
 };
