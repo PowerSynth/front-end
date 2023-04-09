@@ -3,17 +3,17 @@ import "./WelcomePage.css";
 
 const WelcomePage: React.FC = () => {
 	const handleOpenManual = () => {
-		console.log("Open Manual");
+		
 		// Manual V1.9 from E3DA website
 		window.open('https://e3da.csce.uark.edu/release/PowerSynth/manual/PowerSynth_v1.9.pdf', '_blank');
 	};
 
 	const handleCreateProject = () => {
-		console.log("Create Project");
+		
 	};
 
 	const handleRunProject = () => {
-		console.log("Run Project");
+		
 	};
 
 	return (
