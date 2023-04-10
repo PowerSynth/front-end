@@ -10,10 +10,6 @@ const App: React.FC = () => {
   return (
     <div>
       <WelcomePage />
-
-      {/* <EditConstraints /> */}
-      {/* <EditLayerStack /> */}
-
     </div>
   );
 };

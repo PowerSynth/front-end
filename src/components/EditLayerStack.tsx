@@ -1,5 +1,5 @@
 import React from "react";
-import "./EditLayerStack.css";
+import "./ConstraintLayerStack.css";
 
 const EditLayerStack: React.FC = () => {
   
@@ -22,7 +22,7 @@ const EditLayerStack: React.FC = () => {
 
 
   return (
-    <div className="edit-layer-stack">
+    <div className="constraint-layerstack">
       <h2>Edit Layer Stack</h2>
       <h3>
           Please edit the values in the layer_stack.csv file, then click continue.
@@ -34,7 +34,7 @@ const EditLayerStack: React.FC = () => {
         currently displays table with hard coded attributes (ID,name,etc), Should work fine if the layer_stack.csv can only contain those attributes
         For future: make editable to allow updating of the the layer_stack data
       */}
-      <div className="edit-layer-table"> 
+      <div className="table-box"> 
         <table>
           <tr>
             {header.map((rows) => { 
@@ -44,7 +44,7 @@ const EditLayerStack: React.FC = () => {
           {dataExample.map((val, key) => {
             return (
               <tr key={key}>
-                <td className="col-id">{val.ID}</td> {/* ID column styled differently */}
+                <td className="editlayer-col-id">{val.ID}</td> {/* ID column styled differently */}
                 <td>{val.Name}</td>
                 <td>{val.Origin}</td>
                 <td>{val.Width}</td>
@@ -62,7 +62,7 @@ const EditLayerStack: React.FC = () => {
         Button to continue to the next page, not implemented yet 
         Currently stays on bottom right of screen no matter the size and zoom, might change in future
       */}
-      <button className="continue-button" onClick={handleContinue}>Continue</button>
+      <button onClick={handleContinue}>Continue</button>
 		</div>
 	);
 };
