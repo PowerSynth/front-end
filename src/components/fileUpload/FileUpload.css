@@ -2,13 +2,11 @@
     background-color: #edf2f7;
     border: 3px dashed #cbd5e0;
     padding: 1em;
-    /* min-width: 380px; */
-    /* min-height: 230px; */
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 50%;
+    height: 40%;
     width: 50%;
 }
 
@@ -36,7 +34,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
     color: #fff;
     background-color: #28aa01;
     font-size: 1.1rem;
@@ -46,6 +43,4 @@
     outline: none;
     transition: background-color 0.4s;
     box-shadow: 0px 8px 24px rgba(149, 157, 165, 0.5);
-
 }
-
