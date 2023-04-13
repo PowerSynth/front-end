@@ -1,7 +1,7 @@
 import React from "react";
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css'; // Default Tab styling from react-tabs package, will change later
-import "./EditConstraints.css";
+import "./ConstraintLayerStack.css";
 
 const EditConstraints: React.FC = () => {
   // arrays for all future headers for other tabs from constraints.csv, otehrs will be implemented later
@@ -26,7 +26,7 @@ const EditConstraints: React.FC = () => {
   }; 
 
   return (
-    <div className="edit-constraints">
+    <div className="constraint-layerstack">
       <h2> Edit Constraints </h2>
       <h3> Please edit the values in the constraints.csv file, then click continue. </h3>
       
@@ -44,10 +44,10 @@ const EditConstraints: React.FC = () => {
 
         {/* TabPanel is where contents of each tab need to be placed */}
         <TabPanel> 
-          <div className="min-dimensions">
+          <div className="table-box">
             <table>
               <tr>
-                <td className="cellCorner"></td> {/* Modify corner to look cleaner */}
+                <td className="constraints-cellCorner"></td> {/* Modify corner to look cleaner */}
                 {minDimHeader.map((rows) => {
                   return <th scope="col">{rows}</th>
                 })}
