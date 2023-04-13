@@ -4,15 +4,16 @@ import './App.css';
 import WelcomePage from './components/WelcomePage';
 import EditConstraints from './components/EditConstraints';
 import InitialStructureAndLayout from './components/InitialStructureAndLayout';
+import { Route, Routes } from 'react-router-dom'
 
 const App: React.FC = () => {
   return (
     <div>
-      {
-      //<InitialStructureAndLayout/>
-      }
-      <WelcomePage />
-      {/* <EditConstraints /> */}
+      <Routes>
+        <Route path="/" element={<WelcomePage />} />
+        <Route path="/initial-structure-and-layout" element={<InitialStructureAndLayout />} />
+        {/* <Route path="/edit-constraints" element={<EditConstraints />} /> */}
+      </Routes>
     </div>
   );
 };
