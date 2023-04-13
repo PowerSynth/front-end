@@ -46,6 +46,8 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 To learn React, check out the [React documentation](https://reactjs.org/).
 
 ## Blueprint
+
 Our team has decided to use the Blueprint component library for development. Here are some useful links related to Blueprint:
+
 - [Blueprint Documentation](https://blueprintjs.com/docs/)
 - [Blueprint Sandbox](https://codesandbox.io/s/blueprint-sandbox-et9xy)
