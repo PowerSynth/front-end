@@ -8,13 +8,13 @@ const WelcomePage: React.FC = () => {
 	const [isModalVisible, setIsModalVisible] = useState(false)
 
 	const handleOpenManual = () => {
-		
+
 		// Manual V1.9 from E3DA website
 		window.open('https://e3da.csce.uark.edu/release/PowerSynth/manual/PowerSynth_v1.9.pdf', '_blank');
 	};
 
 	const handleCreateProject = () => {
-		
+
 	};
 
 	const handleRunProject = () => {
@@ -29,7 +29,7 @@ const WelcomePage: React.FC = () => {
 			<button onClick={handleCreateProject}>Create Project</button>
 			<button onClick={handleRunProject}>Run Project</button>
 			<RunProjectPopupWrapper isModalVisible={isModalVisible} onBackdropClick={handleRunProject} />
-			
+
 		</div>
 	);
 };

@@ -12,9 +12,9 @@ const FileUpload: React.FC<{files: any, setFiles: any, removeFiles: any}> = ({fi
         if(event.target.files != null){
             file = event.target.files[0];
         } else{
-            console.log('empty');   
+            console.log('empty');
         }
-        
+
         file.isUploading = true;
         setFiles([...files, file])
 
@@ -33,7 +33,7 @@ const FileUpload: React.FC<{files: any, setFiles: any, removeFiles: any}> = ({fi
         .catch((err: any) => {
             console.log(err)
             removeFiles(file.name)
-        })        
+        })
     }
     return (
         <div className = "file-card">
@@ -44,7 +44,7 @@ const FileUpload: React.FC<{files: any, setFiles: any, removeFiles: any}> = ({fi
                 </button>
             </div>
             <p className="main">Upload macro_script.txt file</p>
-        </div> 
+        </div>
     )
 };
 export default FileUpload
