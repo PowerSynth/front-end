@@ -20,7 +20,7 @@ const FileItem: React.FC<{file: any, deleteFile: any}> = ({file, deleteFile}) =>
                         <button className="delete-button" onClick={() => deleteFile(file.name)}>X</button>
                     }
                 </div>
-        </li> 
+        </li>
     )
 };
 export default FileItem

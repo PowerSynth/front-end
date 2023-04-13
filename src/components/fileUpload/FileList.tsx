@@ -13,7 +13,7 @@ const FileList: React.FC<{files: any, removeFiles: any}> = ({files, removeFiles}
         axios.delete(`http://localhost:8080/upload?name=${_name}`)
         .then((res) => removeFiles(_name))
         .catch((err) => console.log(err))
-        
+
         //Clearing the item from the form
         let form = (document.getElementById('file-upload-form') as HTMLInputElement)
         form.value = ""

@@ -12,7 +12,7 @@ import FileList from "./FileList"
 interface ModalProps {
     onBackdropClick: () => void;
 }
-  
+
   const Modal: React.FC<ModalProps> = ({ onBackdropClick }) => {
     const [files, setFiles] = useState<{ name: string }[]>([]);
     console.log(files);
@@ -26,7 +26,7 @@ interface ModalProps {
     const handleRunProject = () => {
         console.log("Clicking Run Project")
     }
-  
+
     return ReactDOM.createPortal(
       <div id="ModalDiv" onClick={onBackdropClick}>
         <div id="ModalContainer" onClick={(e) => e.stopPropagation()}>
