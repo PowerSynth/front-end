@@ -13,15 +13,17 @@ app.use(cors());
 app.post("/upload", (req, res) => {
   setTimeout(() => {
     console.log("file uploaded");
-    return res.status(200).json({result : true, msg : "file uploaded"});
+    return res.status(200).json({ result: true, msg: "file uploaded" });
   });
 });
 
 // Deleting file
 app.delete("/upload", (req, res) => {
   console.log("File deleted");
-  return res.status(200).json({result : true, msg : "file deleted"});
+  return res.status(200).json({ result: true, msg: "file deleted" });
 });
 
 // Running file on port 8080
-app.listen(8080, () => { console.log("Server running on port 8080"); });
+app.listen(8080, () => {
+  console.log("Server running on port 8080");
+});
