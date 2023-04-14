@@ -4,6 +4,8 @@
 //-------------------------------------------------------------------------------
 
 import "./FileUpload.css";
+import '@blueprintjs/core/lib/css/blueprint.css';
+import { Button } from "@blueprintjs/core";
 import axios from "axios";
 
 const FileUpload: React.FC<{files: any, setFiles: any, removeFiles: any}> = ({files, setFiles, removeFiles}) => {

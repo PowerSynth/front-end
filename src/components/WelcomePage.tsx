@@ -1,11 +1,14 @@
 import React from "react";
 import { useState } from "react";
 import "./WelcomePage.css";
-import RunProjectPopupWrapper from "./fileUpload/RunProjectPopupWrapper";
+import RunProject from "./fileUpload/RunProjectPopup";
+import '@blueprintjs/core/lib/css/blueprint.css';
+import './popup.css'
+import { Overlay, Classes, Button, Card, Elevation } from "@blueprintjs/core";
 
 
 const WelcomePage: React.FC = () => {
-	const [isModalVisible, setIsModalVisible] = useState(false)
+	const [isRunProjectPopupOpen, setIsRunProjectPopupOpen] = useState(false)
 
 	const handleOpenManual = () => {
 
@@ -19,8 +22,12 @@ const WelcomePage: React.FC = () => {
 
 	const handleRunProject = () => {
 		console.log("Run Project");
-		setIsModalVisible(wasModalVisible => !wasModalVisible)
+		setIsRunProjectPopupOpen(wasRunProjectPopupOpen => !wasRunProjectPopupOpen);
 	};
+
+	const closePopupButton = () => {
+		setIsRunProjectPopupOpen(wasRunProjectPopupOpen => !wasRunProjectPopupOpen);
+	}
 
 	return (
         <div className="welcome-page" id="WelcomePage">
@@ -28,7 +35,24 @@ const WelcomePage: React.FC = () => {
 			<button onClick={handleOpenManual}>Open Manual</button>
 			<button onClick={handleCreateProject}>Create Project</button>
 			<button onClick={handleRunProject}>Run Project</button>
-			<RunProjectPopupWrapper isModalVisible={isModalVisible} onBackdropClick={handleRunProject} />
+
+			{/* This is the popup (overlay) that appears when clicking on run project button -- will be used for create project popup */}
+			<Overlay className={Classes.OVERLAY_SCROLL_CONTAINER} isOpen={isRunProjectPopupOpen}>
+				<div className="popup-container">
+					<Card className="popup-card">
+						<div className="popup-title">
+							<p>Run a Project</p>
+						</div>
+						<div className="popup-container">
+							<RunProject />
+						</div>
+						<div className="buttons-container">
+							<Button className="welcome-page-button" text="Run"/>
+							<Button text="Cancel" onClick={closePopupButton}/>
+						</div>
+					</Card>
+				</div>
+			</Overlay>
 
 		</div>
 	);
