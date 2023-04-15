@@ -141,35 +141,3 @@ const MDKEditor: React.FC = () => {
 };
 
 export default MDKEditor;
-              /*
-          {jsonData.map((CsvData, index) => (
-              <tr key = {index}>
-                <td className="id-rows"> {index + 1} </td>
-                <td> {CsvData.name} </td>
-                <td> {CsvData.thermal_cond} </td>
-                <td> {CsvData.spec_heat_cap} </td>
-                <td> {CsvData.density} </td>
-                <td> {CsvData.electical_res} </td>
-                <td> {CsvData.rel_permit} </td>
-                <td> {CsvData.rel_permeab} </td>
-                <td> {CsvData.q3d_id} </td>
-                <td> {CsvData.youngmodulus} </td>
-                <td> {CsvData.poissons_ratios} </td>
-                <td> {CsvData.thermal_expansion_coeffcient} </td>
-              </tr>
-            ))}
-          */
-
-          /* <th> # </th>
-              <th> Name </th>
-              <th> Thermal_Cond </th>
-              <th> Spec_Heat_Cap</th>
-              <th> Density </th>
-              <th> Electrical_Res </th>
-              <th> Rel_Permit </th>
-              <th> Rel_Permeab </th>
-              <th> q3d_id </th>
-              <th> Young_Modulus </th>
-              <th> Poissons_ratios </th>
-              <th> Thermal_Expansion_Coefficient </th> 
-          */
