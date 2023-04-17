@@ -19,7 +19,7 @@ const RunProject: React.FC<{popupIsOpen: any, closePopup: any}> = ({popupIsOpen,
 
         //uncomment line below when implementing solutions page functionality and delete this line
         //closePopup();
-		
+
 	};
 
     return (
@@ -31,7 +31,7 @@ const RunProject: React.FC<{popupIsOpen: any, closePopup: any}> = ({popupIsOpen,
                     </div>
                     <div className="popup-container">
                         <RunProjectComponents />
-                    </div>		
+                    </div>
                     <div className="buttons-container">
                         <Button text="Cancel" onClick={closePopup}/>
                         <Button className="welcome-page-button" text="Run" onClick={handleRunProject}/>

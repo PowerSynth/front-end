@@ -18,14 +18,14 @@ const CreateProject: React.FC<{popupIsOpen: any, closePopup: any}> = ({popupIsOp
 
         //uncomment line below when implementing edit materials page functionality and delete this line
         //closePopup();
-		
+
 	};
 
     //Handle user clicking 'Defualt Materials' button, should route to initial structure and layout
 	const handleDefaultMaterials = () => {
 		console.log("Defualt Materials Pressed");
         //route initial structure and layout
-		
+
 	};
 
     return (
@@ -38,7 +38,7 @@ const CreateProject: React.FC<{popupIsOpen: any, closePopup: any}> = ({popupIsOp
                     <div className="popup-container">
                         <p>Would you like to edit the materials list?<br></br>
                         If not, the default materials will be used.</p>
-                    </div>		
+                    </div>
                     <div className="buttons-container">
                         <Button text="Edit Materials List" onClick={handleEditMaterials} />
                         <Button text="Use Default Materials" onClick={handleDefaultMaterials} />
