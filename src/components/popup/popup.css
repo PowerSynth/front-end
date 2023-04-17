@@ -18,21 +18,21 @@
 }
 
 .popup-title {
-    height: 10%;
+    height: 15%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .popup-title p {
-    font-size: larger;
+    font-size: 20px;
     font-weight: bold;
 	color: #333;
 }
 
 .popup-content {
     width: 100%;
-    height: 80%;
+    height: 75%;
     background-color: none;
     display: flex;
     flex-direction: column;
@@ -41,17 +41,18 @@
 
 .buttons-container {
     width: 100%;
-    height: 10%;
+    height: 20%;
     background-color: none;
     display: grid;
     grid-template-columns: 30% 30%;
     align-items: center;
     justify-content: center;
     column-gap: 5px;
+    row-gap: 5px;
 }
 
 .buttons-container .bp4-button {
-    margin-top: 20px;
+    /* margin-top: 20px; */
     padding: 10px 20px;
     font-size: 18px;
     font-weight: bold;
@@ -64,4 +65,9 @@
 
 .buttons-container .bp4-button:hover {
     background-color:#333;
+}
+
+.cancel-button {
+    grid-column-start: 1;
+    grid-column-end: 3;
 }
