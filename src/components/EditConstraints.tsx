@@ -152,7 +152,7 @@ const EditConstraints: React.FC = () => {
   }; 
 
   return (
-    <div className="edit-constraints">
+    <div className="constraint-layerstack">
       <h2> Edit Constraints </h2>
       <h3> Please edit the values in the constraints.csv file, then click continue. </h3>
       
