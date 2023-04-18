@@ -2,9 +2,9 @@ import React from "react";
 import "./TablePages.css";
 
 const EditLayerStack: React.FC = () => {
-  
-  {/* 
-    Hard coded header and data in array from figure 26 to test array to table output 
+
+  {/*
+    Hard coded header and data in array from figure 26 to test array to table output
     Later, will take layer_stack.csv and turn it into an array or json to output to table and have ability to edit
   */}
   const header = ["ID", "Name", "Origin", "Width", "Length", "Thickness", "Material", "Type", "Electrical"];
@@ -29,15 +29,15 @@ const EditLayerStack: React.FC = () => {
       </h3>
 
 
-      {/* 
-        TABLE: takes data from dataExample array above in that format and should work for data with more or less rows 
+      {/*
+        TABLE: takes data from dataExample array above in that format and should work for data with more or less rows
         currently displays table with hard coded attributes (ID,name,etc), Should work fine if the layer_stack.csv can only contain those attributes
         For future: make editable to allow updating of the the layer_stack data
       */}
-      <div className="table-box"> 
+      <div className="table-box">
         <table>
           <tr>
-            {header.map((rows) => { 
+            {header.map((rows) => {
               return <th>{rows}</th>
             })}
           </tr>
@@ -58,8 +58,8 @@ const EditLayerStack: React.FC = () => {
         </table>
       </div>
 
-      {/* 
-        Button to continue to the next page, not implemented yet 
+      {/*
+        Button to continue to the next page, not implemented yet
         Currently stays on bottom right of screen no matter the size and zoom, might change in future
       */}
       <button className="layerstack-continue" onClick={handleContinue}>Continue</button>

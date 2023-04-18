@@ -75,13 +75,13 @@ const MDKEditor: React.FC = () => {
   return (
     <div className = "constraint-layerstack-mdk">
       <h2> PowerSynth MDK Window (Button functionality other than save not implemented) </h2>
-      <h3> Import Materials.csv </h3> 
+      <h3> Import Materials.csv </h3>
       <div className="import-section">
         <input type="file" accept="text/csv" onChange={handleFileUpload} />
         <button className="display-button" onClick = {convertCsvToJson}>Display Materials</button>
       </div>
-      
-      <div className = "table-box"> 
+
+      <div className = "table-box">
         <table>
           <thead>
             <tr>
@@ -131,7 +131,7 @@ const MDKEditor: React.FC = () => {
         <button onClick={handleMDKContinue}>Continue</button>
       </div>
     </div>
-    
+
   );
 };
 
