@@ -1,5 +1,5 @@
 import React from "react";
-import "./ConstraintLayerStack.css";
+import "./TablePages.css";
 
 const EditLayerStack: React.FC = () => {
   
@@ -22,7 +22,7 @@ const EditLayerStack: React.FC = () => {
 
 
   return (
-    <div className="constraint-layerstack">
+    <div className="constraint-layerstack-mdk">
       <h2>Edit Layer Stack</h2>
       <h3>
           Please edit the values in the layer_stack.csv file, then click continue.
@@ -62,7 +62,7 @@ const EditLayerStack: React.FC = () => {
         Button to continue to the next page, not implemented yet 
         Currently stays on bottom right of screen no matter the size and zoom, might change in future
       */}
-      <button onClick={handleContinue}>Continue</button>
+      <button className="layerstack-continue" onClick={handleContinue}>Continue</button>
 		</div>
 	);
 };

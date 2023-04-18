@@ -1,8 +1,8 @@
 import React from "react";
 import { useState } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import 'react-tabs/style/react-tabs.css'; // Default Tab styling from react-tabs package, will change later
-import "./EditConstraints.css";
+import 'react-tabs/style/react-tabs.css'; // Default Tab styling from react-tabs package
+import "./TablePages.css";
 
   type Data = {
     ROW: any;
@@ -59,7 +59,7 @@ import "./EditConstraints.css";
       <table>
       <thead>
         <tr>
-          <td className="cellCorner"></td> {/* Modify corner to look cleaner */}
+          <td className="constraints-cellCorner"></td> {/* Modify corner to look cleaner */}
                 {tableHeader.map((rows) => {
                   return <th scope="col">{rows}</th>
                 })}
@@ -152,7 +152,7 @@ const EditConstraints: React.FC = () => {
   }; 
 
   return (
-    <div className="constraint-layerstack">
+    <div className="constraint-layerstack-mdk">
       <h2> Edit Constraints </h2>
       <h3> Please edit the values in the constraints.csv file, then click continue. </h3>
       
@@ -168,41 +168,38 @@ const EditConstraints: React.FC = () => {
           <Tab>MinVerSpacing</Tab>
         </TabList>
 
-        <TabPanel>  {/* WILL NEED TO CHANGE/REORGANIZE CLASS NAMES */}
-          <div className="min-dimensions"> 
+        <TabPanel> 
+          <div className="table-box"> 
             <Table data={minDimData} setData={setminDimData} />
           </div>
-        {/* Rest of panels can be implemented later with their respective data */}
         </TabPanel>
 
         <TabPanel>
-          <div className="min-dimensions"> 
+          <div className="table-box"> 
             <Table data={horEncData} setData={sethorEncData} />
           </div>
         </TabPanel>
 
         <TabPanel>
-          <div className="min-dimensions">
+          <div className="table-box">
             <Table data={verEncData} setData={setverEncData} />
           </div>
         </TabPanel>
 
         <TabPanel>
-          <div className="min-dimensions"> 
+          <div className="table-box"> 
             <Table data={horSpaData} setData={sethorSpaData} />
           </div>
         </TabPanel>
 
         <TabPanel>
-          <div className="min-dimensions"> 
+          <div className="table-box"> 
             <Table data={verSpaData} setData={setverSpaData} />
           </div>
         </TabPanel>
 
       </Tabs>
-      
-      {/* Later implement handle to go to next page */}
-      <button onClick={handleConstraintsContinue}>Continue</button>
+      <button className="constraints-continue" onClick={handleConstraintsContinue}>Continue</button>
     </div>
   );
 

@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import Papa from 'papaparse';
-//TEMPORARY CSS FILE, to be merged with other CSS file
-import "./tempMDK.css";
+import "./TablePages.css";
 
-  // todo: Style/format closer to original, merge CSS files, abstract the csv file to json to work with other files for Edit Constraints and Edit Layer Stack pages
+  // todo: Style/format closer to original, abstract the csv file to json to work with other files for Edit Constraints page
   // todo potentially: If possible add all button functionality, Implement way to display default materials list, CSV error checking?, input error checking?
 
 type CsvData = {
@@ -21,9 +20,6 @@ const MDKEditor: React.FC = () => {
   }
   const handleMDKClone = () => {
     console.log("Clone");
-  }
-  const handleMDKEdit = () => {
-    console.log("Edit");
   }
   const handleMDKRemove = () => {
     console.log("Remove");
@@ -77,12 +73,12 @@ const MDKEditor: React.FC = () => {
 
 
   return (
-    <div className = "MDK-edit">
+    <div className = "constraint-layerstack-mdk">
       <h2> PowerSynth MDK Window (Button functionality other than save not implemented) </h2>
       <h3> Import Materials.csv </h3> 
       <div className="import-section">
         <input type="file" accept="text/csv" onChange={handleFileUpload} />
-        <button onClick = {convertCsvToJson}>Display Materials</button>
+        <button className="display-button" onClick = {convertCsvToJson}>Display Materials</button>
       </div>
       
       <div className = "table-box"> 
@@ -126,7 +122,6 @@ const MDKEditor: React.FC = () => {
       <div className= "edit-buttons">
           <button onClick={handleMDKAdd}>Add</button>
           <button onClick={handleMDKClone}>Clone</button>
-          <button onClick={handleMDKEdit}>Edit</button>
           <button onClick={handleMDKRemove}>Remove</button>
       </div>
       <div className= "bottom-buttons">
