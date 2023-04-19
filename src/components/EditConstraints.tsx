@@ -26,7 +26,7 @@ import "./TablePages.css";
 
   // default values include vertical headers due to what I used to input data into cells
   const DimData = [
-    {ROW: "MinWidth", EMPTY: 1, power_trace: 1, signal_trace: 1, bonding_wire_pad: 0, power_lead: 3.0, signal_lead: 1.0, MOS: 4.0, cap: 6.0 }, 
+    {ROW: "MinWidth", EMPTY: 1, power_trace: 1, signal_trace: 1, bonding_wire_pad: 0, power_lead: 3.0, signal_lead: 1.0, MOS: 4.0, cap: 6.0 },
     {ROW: "MinLength", EMPTY: 1, power_trace: 1, signal_trace: 1, bonding_wire_pad: 0, power_lead: 3.0, signal_lead: 1.0, MOS: 6.0, cap: 2.0 },
     {ROW: "MinHorExtension", EMPTY: 1, power_trace: 1, signal_trace: 1, bonding_wire_pad: 0, power_lead: 3.0, signal_lead: 1.0, MOS: 4.0, cap: 6.0 },
     {ROW: "MinVerExtension", EMPTY: 1, power_trace: 1, signal_trace: 1, bonding_wire_pad: 0, power_lead: 3.0, signal_lead: 1.0, MOS: 6.0, cap: 2.0 }
@@ -142,25 +142,25 @@ const EditConstraints: React.FC = () => {
   const [horSpaData, sethorSpaData] = useState(horSpa);
   const [verSpaData, setverSpaData] = useState(verSpa);
 
-  const handleConstraintsContinue = () => { 
+  const handleConstraintsContinue = () => {
     console.log("Edit Constraints Continue")
     console.log(minDimData);
     console.log(horEncData);
     console.log(verEncData);
     console.log(horSpaData);
     console.log(verSpaData);
-  }; 
+  };
 
   return (
     <div className="constraint-layerstack-mdk">
       <h2> Edit Constraints </h2>
       <h3> Please edit the values in the constraints.csv file, then click continue. </h3>
-      
+
       {/* react-tabs implementation */}
       <Tabs defaultIndex={0} onSelect={(index) => console.log(index)}>
-        
+
         {/* Names for tabs */}
-        <TabList>  
+        <TabList>
           <Tab>Min Dimensions</Tab>
           <Tab>MinHorEnclosure</Tab>
           <Tab>MinVerEnclosure</Tab>
@@ -168,14 +168,14 @@ const EditConstraints: React.FC = () => {
           <Tab>MinVerSpacing</Tab>
         </TabList>
 
-        <TabPanel> 
-          <div className="table-box"> 
+        <TabPanel>
+          <div className="table-box">
             <Table data={minDimData} setData={setminDimData} />
           </div>
         </TabPanel>
 
         <TabPanel>
-          <div className="table-box"> 
+          <div className="table-box">
             <Table data={horEncData} setData={sethorEncData} />
           </div>
         </TabPanel>
@@ -187,13 +187,13 @@ const EditConstraints: React.FC = () => {
         </TabPanel>
 
         <TabPanel>
-          <div className="table-box"> 
+          <div className="table-box">
             <Table data={horSpaData} setData={sethorSpaData} />
           </div>
         </TabPanel>
 
         <TabPanel>
-          <div className="table-box"> 
+          <div className="table-box">
             <Table data={verSpaData} setData={setverSpaData} />
           </div>
         </TabPanel>
