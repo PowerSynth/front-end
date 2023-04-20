@@ -2,7 +2,6 @@ import React from 'react';
 import './App.css';
 
 import WelcomePage from './components/WelcomePage';
-
 import EditConstraints from './components/EditConstraints';
 import MDKEditor from './components/MDKEditor';
 import EditLayerStack from './components/EditLayerStack';
