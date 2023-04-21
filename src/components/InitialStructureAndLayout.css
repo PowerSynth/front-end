@@ -24,7 +24,7 @@ button{
     white-space: nowrap;
 }
 .row input{
-    
+
     margin-left: 0.5rem;
     margin-right: 0.5rem;
 }
@@ -37,7 +37,7 @@ button{
 .row > :last-child{
     /*flex: 0 0 20%;*/
     flex: 1;
-    
+
 }
 .top-row{
     display: flex;

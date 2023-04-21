@@ -31,42 +31,42 @@ const OptimizationSetupPopup: React.FC<{isPopupOpen: boolean}> = ({isPopupOpen})
 
     const handleElectricalSetupButton = () => {
         setIsElectricalSetupOpen(wasElectricalSetupOpen => !wasElectricalSetupOpen)
-        if (isOptionOneOpen) { 
+        if (isOptionOneOpen) {
             setIsOptionOneOpen(false)
-            setOptionOneWasOpen(true) 
+            setOptionOneWasOpen(true)
         }
         if (optionOneWasOpen) {
             setIsOptionOneOpen(true)
             setOptionOneWasOpen(false)
         }
-        if (isOptionThreeOpen) { 
+        if (isOptionThreeOpen) {
             setIsOptionThreeOpen(false)
-            setOptionThreeWasOpen(true)  
+            setOptionThreeWasOpen(true)
         }
         if (optionThreeWasOpen) {
             setIsOptionThreeOpen(true)
-            setOptionThreeWasOpen(false)  
+            setOptionThreeWasOpen(false)
         }
-        
+
     }
 
     const handleThermalSetupButton = () => {
         setIsThermalSetupOpen(wasThermalSetupOpen => !wasThermalSetupOpen)
-        if (isOptionOneOpen) { 
+        if (isOptionOneOpen) {
             setIsOptionOneOpen(false)
-            setOptionOneWasOpen(true) 
+            setOptionOneWasOpen(true)
         }
         if (optionOneWasOpen) {
             setIsOptionOneOpen(true)
             setOptionOneWasOpen(false)
         }
-        if (isOptionThreeOpen) { 
+        if (isOptionThreeOpen) {
             setIsOptionThreeOpen(false)
-            setOptionThreeWasOpen(true)  
+            setOptionThreeWasOpen(true)
         }
         if (optionThreeWasOpen) {
             setIsOptionThreeOpen(true)
-            setOptionThreeWasOpen(false)  
+            setOptionThreeWasOpen(false)
         }
     }
 
@@ -99,13 +99,13 @@ const OptimizationSetupPopup: React.FC<{isPopupOpen: boolean}> = ({isPopupOpen})
                     <Card className="popup-card">
                         <div className="popup-title">
                             <p>Optimization Setup</p>
-                        </div>    
+                        </div>
                         <OptimizationBody OptionOne={isOptionOneOpen} OptionTwo={isOptionTwoOpen} OptionThree={isOptionThreeOpen} HandleElectricalSetup={handleElectricalSetupButton} HandleThermalSetup={handleThermalSetupButton}/>
                         <div className="buttons-container">
                             <Button text="Run PowerSynth" className="buttons-full" onClick={handleRunPowerSynth}/>
                         </div>
                     </Card>
-                    
+
                 }
                 {/* Section for the Popups for Electrical setup and Thermal Setup, need to be implented */}
                 {isElectricalSetupOpen &&
