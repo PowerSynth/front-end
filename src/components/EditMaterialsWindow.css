@@ -1,0 +1,14 @@
+.mainDiv{
+    text-align: center;
+    width: 24rem;
+    height: 8rem;
+    padding: 1rem;
+}
+.button-flex{
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+}
+.button-flex div{
+    width: 30%;
+}
