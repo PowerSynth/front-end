@@ -2,6 +2,9 @@ import React from "react";
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css'; // Default Tab styling from react-tabs package, will change later
 import "./ConstraintLayerStack.css";
+import { useState } from "react";
+import './popup/popup.css'
+import OptimizationSetupPopup from "./optimizationSetup/OptimizationSetup";
 
 const EditConstraints: React.FC = () => {
   // arrays for all future headers for other tabs from constraints.csv, otehrs will be implemented later
@@ -21,9 +24,12 @@ const EditConstraints: React.FC = () => {
     {ROW: "MinVerExtension", EMPTY: 1, power_trace: 1, signal_trace: 1, bonding_wire_pad: 0, power_lead: 3.0, signal_lead: 1.0, MOS: 6.0, cap: 2.0 }
   ];
 
+  const [isOptionsPopupOpen, setIsOptionsPopupOpen] = useState(false)
+
   const handleConstraintsContinue = () => { 
     console.log("Edit Constraints Continue")
-  }; 
+    setIsOptionsPopupOpen(wasOptionsPopupOpen => !wasOptionsPopupOpen)
+  };
 
   return (
     <div className="constraint-layerstack">
@@ -87,8 +93,9 @@ const EditConstraints: React.FC = () => {
 
       </Tabs>
       
-      {/* Later implement handle to go to next page */}
+      {/* Launches popup to set Optimization Constraints before before running project */}
       <button onClick={handleConstraintsContinue}>Continue</button>
+        <OptimizationSetupPopup isPopupOpen={isOptionsPopupOpen} />
     </div>
   );
 

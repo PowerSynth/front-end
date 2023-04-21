@@ -18,6 +18,7 @@ const EditLayerStack: React.FC = () => {
 
   const handleContinue = () => {
 		console.log("Continue Button");
+    window.open("/edit-constraints", "_self");
 	};
 
 
