@@ -13,9 +13,9 @@ FocusStyleManager.onlyShowFocusOnTabs();
 
 const EditMaterialsWindow: React.FC = () => {
 
-    
+
 	const handleEditMaterialsButton = () => {
-		
+
 	};
 
     const handleUseDefaultMaterialsButton = () => {
