@@ -24,12 +24,13 @@ button {
   padding: 10px 20px;
   font-size: 18px;
   cursor: pointer;
+  width: 20%;
 
-  position:absolute;
+  /* position:absolute;
   bottom: 15px;
-  right: 15px;
+  right: 15px; */
 }
-  
+
 
 
 /* table styling stuff */

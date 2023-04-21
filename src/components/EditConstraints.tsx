@@ -2,6 +2,9 @@ import React from "react";
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css'; // Default Tab styling from react-tabs package, will change later
 import "./ConstraintLayerStack.css";
+import { useState } from "react";
+import './popup/popup.css'
+import OptimizationSetupPopup from "./optimizationSetup/OptimizationSetup";
 
 const EditConstraints: React.FC = () => {
   // arrays for all future headers for other tabs from constraints.csv, otehrs will be implemented later
@@ -15,26 +18,29 @@ const EditConstraints: React.FC = () => {
 
   // default values include vertical headers due to what I used to input data into cells
   const MinDimDefaultValues = [
-    {ROW: "MinWidth", EMPTY: 1, power_trace: 1, signal_trace: 1, bonding_wire_pad: 0, power_lead: 3.0, signal_lead: 1.0, MOS: 4.0, cap: 6.0 }, 
+    {ROW: "MinWidth", EMPTY: 1, power_trace: 1, signal_trace: 1, bonding_wire_pad: 0, power_lead: 3.0, signal_lead: 1.0, MOS: 4.0, cap: 6.0 },
     {ROW: "MinLength", EMPTY: 1, power_trace: 1, signal_trace: 1, bonding_wire_pad: 0, power_lead: 3.0, signal_lead: 1.0, MOS: 6.0, cap: 2.0 },
     {ROW: "MinHorExtension", EMPTY: 1, power_trace: 1, signal_trace: 1, bonding_wire_pad: 0, power_lead: 3.0, signal_lead: 1.0, MOS: 4.0, cap: 6.0 },
     {ROW: "MinVerExtension", EMPTY: 1, power_trace: 1, signal_trace: 1, bonding_wire_pad: 0, power_lead: 3.0, signal_lead: 1.0, MOS: 6.0, cap: 2.0 }
   ];
 
-  const handleConstraintsContinue = () => { 
+  const [isOptionsPopupOpen, setIsOptionsPopupOpen] = useState(false)
+
+  const handleConstraintsContinue = () => {
     console.log("Edit Constraints Continue")
-  }; 
+    setIsOptionsPopupOpen(wasOptionsPopupOpen => !wasOptionsPopupOpen)
+  };
 
   return (
     <div className="constraint-layerstack">
       <h2> Edit Constraints </h2>
       <h3> Please edit the values in the constraints.csv file, then click continue. </h3>
-      
+
       {/* react-tabs implementation */}
       <Tabs defaultIndex={0} onSelect={(index) => console.log(index)}>
-        
+
         {/* Names for tabs */}
-        <TabList>  
+        <TabList>
           <Tab>Min Dimensions</Tab>
           <Tab>MinHorEnclosure</Tab>
           <Tab>MinVerEnclosure</Tab>
@@ -43,7 +49,7 @@ const EditConstraints: React.FC = () => {
         </TabList>
 
         {/* TabPanel is where contents of each tab need to be placed */}
-        <TabPanel> 
+        <TabPanel>
           <div className="table-box">
             <table>
               <tr>
@@ -52,7 +58,7 @@ const EditConstraints: React.FC = () => {
                   return <th scope="col">{rows}</th>
                 })}
               </tr>
-              
+
               {/* Input all data rows */}
               {MinDimDefaultValues.map((val, key)=> {
                 return (
@@ -86,9 +92,10 @@ const EditConstraints: React.FC = () => {
         </TabPanel>
 
       </Tabs>
-      
-      {/* Later implement handle to go to next page */}
+
+      {/* Launches popup to set Optimization Constraints before before running project */}
       <button onClick={handleConstraintsContinue}>Continue</button>
+        <OptimizationSetupPopup isPopupOpen={isOptionsPopupOpen} />
     </div>
   );
 
