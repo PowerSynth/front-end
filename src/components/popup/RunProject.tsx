@@ -17,8 +17,15 @@ const RunProject: React.FC<{popupIsOpen: any, closePopup: any}> = ({popupIsOpen,
 		console.log("Running...");
         //send data & go to load screen
 
-        //uncomment line below when implementing solutions page functionality and delete this line
-        //closePopup();
+        axios.post('http://localhost:8080/runPowerSynth',  {headers:{"Content-Type": "multipart/form-data"}})
+        // .then((res: any) => {
+        //     // file.isUploading = false;
+        //     // setFiles([...files, file])
+        // })
+        .catch((err: any) => {
+            console.log(err)
+            // removeFiles(file.name)
+        })
 
 	};
 

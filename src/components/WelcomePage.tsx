@@ -5,6 +5,7 @@ import RunProject from "./popup/RunProject";
 import CreateProject from "./popup/CreateProject";
 import '@blueprintjs/core/lib/css/blueprint.css';
 import './popup/popup.css'
+import axios from "axios";
 
 
 
@@ -39,7 +40,12 @@ const WelcomePage: React.FC = () => {
 		}
 		if (isRunProjectPopupOpen) {
 			setIsRunProjectPopupOpen(wasRunProjectPopupOpen => !wasRunProjectPopupOpen);
-			console.log('closing run')
+			console.log('closing run');
+
+			axios.post(`http://localhost:8080/delete`, {"name": "**delete-all-files**"}, {headers:{"Content-Type": "application/json"}})
+			.catch((err: any) => {
+				console.log(err)
+			})
 		}
 	}
 
