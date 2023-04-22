@@ -76,7 +76,7 @@ app.post("/runPowerSynth", (req, res) => {
   }
   //Create file(s) in folder, currently commented out so it doesn't create files every time during testing
   for (var key in files) {
-    files[key].mv(mainPath+`${files[key]["name"]}`)
+    //files[key].mv(mainPath+`${files[key]["name"]}`)
   }
   //Remove file(s) from temporary json object
   for (var key in files) {
