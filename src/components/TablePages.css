@@ -1,5 +1,5 @@
 /* CSS file for styling EditConstraints, EditLayerStack, and MDKEditor pages */
-
+/* NEED TO REDO WITH BLUEPRINT */
 .constraint-layerstack-mdk {
   display: flex;
 	flex-direction: column;
@@ -82,17 +82,14 @@ input {
   margin-left: 30px;
 }
 
-
-button {
-  padding: 10px 20px;
-
-  margin-left: 10px;
-  font-size: 18px;
-  cursor: pointer;
-}
-
 /* buttons at bottom right of screen*/
 .bottom-buttons{
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  width: auto;
+  height: auto;
+
   display: inline-block;
   position: fixed;
   bottom: 10px;
@@ -100,18 +97,36 @@ button {
 }
 
 .display-button {
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  width: 20%;
   padding: 3px 10px;
   margin-left: 0px;
+  height: auto;
+  width: auto;
 }
 
 .constraints-continue{
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  width: 20%;
   position:absolute;
   bottom: 15px;
   right: 15px;
+  height: auto;
+  width: auto;
 }
 
 .layerstack-continue{
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  width: 20%;
   position:absolute;
   bottom: 15px;
   right: 15px;
+  height: auto;
+  width: auto;
 }
