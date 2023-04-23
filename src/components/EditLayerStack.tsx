@@ -1,23 +1,40 @@
 import React from "react";
+import { useState } from 'react';
+import { Table2, Column, EditableCell2 } from '@blueprintjs/table';
 import "./TablePages.css";
+import '@blueprintjs/core/lib/css/blueprint.css';
+import '@blueprintjs/table/lib/css/table.css';
+import '@blueprintjs/popover2/lib/css/blueprint-popover2.css';
 
+
+// TODO FIX EMPTY INITIAL CELL NOT UPDATING CORRECTLY ON TABLE (JSON UPDATES CORRECTLY)
+interface TableData1 {
+  ID: any;
+  Name: any;
+  Origin: any;
+  Width: any;
+  Length: any;
+  Thickness: any;
+  Material: any;
+  Type: any;
+  Electrical: any;
+}
+
+const initialLayerStack: TableData1[] = [
+  {ID: 1, Name: "Baseplate", Origin: "0,0", Width: 50, Length: 60, Thickness: 5, Material: "copper", Type: "p", Electrical: "F"},
+  {ID: 2, Name: "Bottom_Metal", Origin: "0,0", Width: 40, Length: 50, Thickness: 0.2, Material: "copper", Type: "p", Electrical: "G"},
+  {ID: 3, Name: "Ceramic1", Origin: "0,0", Width: 40, Length: 50, Thickness: 0.64, Material: "Al_N", Type: "p", Electrical: "D"},
+  {ID: 4, Name: "I1", Origin: "0,0", Width: 40, Length: 50, Thickness: 0.2, Material: "copper", Type: "p", Electrical: "S"},
+  {ID: 5, Name: "C1", Origin: '', Width: 40, Length: 50, Thickness: 0.18, Material: "SiC", Type: "a", Electrical: "C"}
+]
+
+// TODO ?
 const EditLayerStack: React.FC = () => {
-
-  {/*
-    Hard coded header and data in array from figure 26 to test array to table output
-    Later, will take layer_stack.csv and turn it into an array or json to output to table and have ability to edit
-  */}
-  const header = ["ID", "Name", "Origin", "Width", "Length", "Thickness", "Material", "Type", "Electrical"];
-  const dataExample = [
-    {ID: 1, Name: "Baseplate", Origin: "0,0", Width: 50, Length: 60, Thickness: 5, Material: "copper", Type: "p", Electrical: "F"},
-    {ID: 2, Name: "Bottom_Metal", Origin: "0,0", Width: 40, Length: 50, Thickness: 0.2, Material: "copper", Type: "p", Electrical: "G"},
-    {ID: 3, Name: "Ceramic1", Origin: "0,0", Width: 40, Length: 50, Thickness: 0.64, Material: "Al_N", Type: "p", Electrical: "D"},
-    {ID: 4, Name: "I1", Origin: "0,0", Width: 40, Length: 50, Thickness: 0.2, Material: "copper", Type: "p", Electrical: "S"},
-    {ID: 5, Name: "C1", Origin: "", Width: 40, Length: 50, Thickness: 0.18, Material: "SiC", Type: "a", Electrical: "C"}
-  ]
+  const [layerStackData, setlayerStackData] = useState<TableData1[]>(initialLayerStack);
 
   const handleContinue = () => {
 		console.log("Continue Button");
+    console.log("New Layer Stack Data: ", layerStackData);
 	};
 
 
@@ -30,37 +47,150 @@ const EditLayerStack: React.FC = () => {
 
 
       {/*
-        TABLE: takes data from dataExample array above in that format and should work for data with more or less rows
-        currently displays table with hard coded attributes (ID,name,etc), Should work fine if the layer_stack.csv can only contain those attributes
-        For future: make editable to allow updating of the the layer_stack data
+        TABLE: hard-coded columns 
+        pulls data from JSON object that gets updated into layerStackData
       */}
       <div className="table-box">
-        <table>
-          <tr>
-            {header.map((rows) => {
-              return <th>{rows}</th>
-            })}
-          </tr>
-          {dataExample.map((val, key) => {
-            return (
-              <tr key={key}>
-                <td className="editlayer-col-id">{val.ID}</td> {/* ID column styled differently */}
-                <td>{val.Name}</td>
-                <td>{val.Origin}</td>
-                <td>{val.Width}</td>
-                <td>{val.Length}</td>
-                <td>{val.Thickness}</td>
-                <td>{val.Material}</td>
-                <td>{val.Type}</td>
-                <td>{val.Electrical}</td>
-              </tr>
-            )})}
-        </table>
+        <Table2 numRows={layerStackData.length} enableRowHeader={false}>
+          {/* ID COLUMN */}
+          <Column 
+            name="ID" 
+              cellRenderer={(rowIndex) => (
+                <EditableCell2
+                  value={layerStackData[rowIndex].ID.toString()}
+                  onConfirm={(value) => {
+                    const newData = [...layerStackData];
+                    newData[rowIndex].ID = value;
+                    setlayerStackData(newData);
+                  }}
+                />
+              )}
+          />
+
+          {/* NAME COLUMN */}
+          <Column 
+            name="Name" 
+              cellRenderer={(rowIndex) => (
+                <EditableCell2
+                  value={layerStackData[rowIndex].Name.toString()}
+                  onConfirm={(value) => {
+                    const newData = [...layerStackData];
+                    newData[rowIndex].Name = value;
+                    setlayerStackData(newData);
+                  }}
+                />
+              )}
+            />
+
+          {/* ORIGIN COLUMN */}
+          <Column 
+            name="Origin" 
+              cellRenderer={(rowIndex) => (
+                <EditableCell2
+                  value={layerStackData[rowIndex].Origin.toString()}
+                  onConfirm={(value) => {
+                    const newData = [...layerStackData];
+                    newData[rowIndex].Origin = value;
+                    setlayerStackData(newData);
+                  }}
+                />
+              )}
+            />
+
+          {/* WIDTH COLUMN */}
+          <Column 
+            name="Width" 
+              cellRenderer={(rowIndex) => (
+                <EditableCell2
+                  value={layerStackData[rowIndex].Width.toString()}
+                  onConfirm={(value) => {
+                    const newData = [...layerStackData];
+                    newData[rowIndex].Width = value;
+                    setlayerStackData(newData);
+                  }}
+                />
+              )}
+            />
+
+          {/* LENGTH COLUMN */}
+          <Column 
+            name="Length" 
+              cellRenderer={(rowIndex) => (
+                <EditableCell2
+                  value={layerStackData[rowIndex].Length.toString()}
+                  onConfirm={(value) => {
+                    const newData = [...layerStackData];
+                    newData[rowIndex].Length = value;
+                    setlayerStackData(newData);
+                  }}
+                />
+              )}
+            />
+
+          {/* THICKNESS COLUMN */}
+          <Column 
+            name="Thickness" 
+              cellRenderer={(rowIndex) => (
+                <EditableCell2
+                  value={layerStackData[rowIndex].Thickness.toString()}
+                  onConfirm={(value) => {
+                    const newData = [...layerStackData];
+                    newData[rowIndex].Thickness = value;
+                    setlayerStackData(newData);
+                  }}
+                />
+              )}
+            />
+
+          {/* MATERIAL COLUMN */}
+          <Column 
+            name="Material" 
+              cellRenderer={(rowIndex) => (
+                <EditableCell2
+                  value={layerStackData[rowIndex].Material.toString()}
+                  onConfirm={(value) => {
+                    const newData = [...layerStackData];
+                    newData[rowIndex].Material = value;
+                    setlayerStackData(newData);
+                  }}
+                />
+              )}
+            />
+
+          {/* TYPE COLUMN */}
+          <Column 
+            name="Type" 
+              cellRenderer={(rowIndex) => (
+                <EditableCell2
+                  value={layerStackData[rowIndex].Type.toString()}
+                  onConfirm={(value) => {
+                    const newData = [...layerStackData];
+                    newData[rowIndex].Type = value;
+                    setlayerStackData(newData);
+                  }}
+                />
+              )}
+            />
+
+          {/* ELECTRICAL COLUMN */}
+          <Column 
+            name="Electrical" 
+              cellRenderer={(rowIndex) => (
+                <EditableCell2
+                  value={layerStackData[rowIndex].Electrical.toString()}
+                  onConfirm={(value) => {
+                    const newData = [...layerStackData];
+                    newData[rowIndex].Electrical = value;
+                    setlayerStackData(newData);
+                  }}
+                />
+              )}
+            />
+        </Table2>
       </div>
 
       {/*
-        Button to continue to the next page, not implemented yet
-        Currently stays on bottom right of screen no matter the size and zoom, might change in future
+         Currently stays on bottom right of screen no matter the size and zoom, might change in future
       */}
       <button className="layerstack-continue" onClick={handleContinue}>Continue</button>
 		</div>
