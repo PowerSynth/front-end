@@ -7,7 +7,8 @@ import "./TablePages.css";
 import '@blueprintjs/core/lib/css/blueprint.css';
 import '@blueprintjs/table/lib/css/table.css';
 import '@blueprintjs/popover2/lib/css/blueprint-popover2.css';
-
+import './popup/popup.css'
+import OptimizationSetupPopup from "./optimizationSetup/OptimizationSetup";
 // TODO IMPLEMENT CHECK TO KNOW WHEN TO USE DEFAULT CONTRAINTS AND WHEN TO PULL FROM CSV
 
 // default values include vertical headers due to what I used to input data into cells
@@ -79,7 +80,8 @@ const EditConstraints: React.FC = () => {
   const [verEncData, setverEncData] = useState<TableData[]>(initialverEnc);
   const [horSpaData, sethorSpaData] = useState<TableData[]>(initialhorSpa);
   const [verSpaData, setverSpaData] = useState<TableData[]>(initialverSpa);
-
+  
+  const [isOptionsPopupOpen, setIsOptionsPopupOpen] = useState(false)
 
   const handleConstraintsContinue = () => {
     console.log("Edit Constraints Continue")
@@ -90,6 +92,7 @@ const EditConstraints: React.FC = () => {
     console.log("verSpa Data: ", verSpaData);
     // will probably implement json--> csv conversion here if not somewhere else
 
+    setIsOptionsPopupOpen(wasOptionsPopupOpen => !wasOptionsPopupOpen)
   };
 
   return (
@@ -669,7 +672,10 @@ const EditConstraints: React.FC = () => {
         </TabPanel>
 
       </Tabs>
+
+      {/* Launches popup to set Optimization Constraints before before running project */}
       <button className="constraints-continue" onClick={handleConstraintsContinue}>Continue</button>
+        <OptimizationSetupPopup isPopupOpen={isOptionsPopupOpen} />
     </div>
   );
 

@@ -1,0 +1,88 @@
+.popup-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-card{
+    background-color: white;
+    width: 55%;
+    height: 70%;
+    border-radius: 3%;
+    display: flex;
+    /* grid-row: 50% auto; */
+    flex-direction: column;
+    align-items: center;
+}
+
+.popup-title {
+    height: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-title p {
+    font-size: 20px;
+    font-weight: bold;
+	color: #333;
+}
+
+.popup-content {
+    width: 100%;
+    height: 75%;
+    background-color: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.buttons-container {
+    width: 100%;
+    height: 20%;
+    background-color: none;
+    display: grid;
+    grid-template-columns: 30% 30%;
+    align-items: center;
+    justify-content: center;
+    column-gap: 5px;
+    row-gap: 5px;
+}
+
+.buttons-container .bp4-button {
+    /* margin-top: 20px; */
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #333;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    height: 50px;
+}
+
+
+
+.buttons-container .bp4-button:hover {
+    background-color:#333;
+}
+
+.cancel-button-full {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.buttons-full{
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.popup-container-text {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}

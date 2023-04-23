@@ -1,6 +1,6 @@
 //-------------------------------------------------------------------
 //Component used to display a list of the files uploaded by users
-//Used in 'RunProjectPopup.tsx'
+//Used in 'RunProjectComponents.tsx'
 //-------------------------------------------------------------------
 
 import React from 'react'

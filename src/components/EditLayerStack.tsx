@@ -35,6 +35,7 @@ const EditLayerStack: React.FC = () => {
   const handleContinue = () => {
 		console.log("Continue Button");
     console.log("New Layer Stack Data: ", layerStackData);
+    window.open("/edit-constraints", "_self");
 	};
 
 

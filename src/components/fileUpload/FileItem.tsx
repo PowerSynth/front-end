@@ -1,6 +1,6 @@
 //--------------------------------------------------------------------
 //Component used to create a file item to display in the file list
-//Used in 'RunProjectPopus.tsx'
+//Used in 'RunProjectComponents.tsx'
 //--------------------------------------------------------------------
 
 import React from 'react'
