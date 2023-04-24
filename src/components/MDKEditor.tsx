@@ -1,133 +1,253 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Papa from 'papaparse';
+import { Table2, Column, EditableCell2 } from '@blueprintjs/table';
 import "./TablePages.css";
+import '@blueprintjs/core/lib/css/blueprint.css';
+import '@blueprintjs/table/lib/css/table.css';
+import '@blueprintjs/popover2/lib/css/blueprint-popover2.css';
 
-  // todo: Style/format closer to original, abstract the csv file to json to work with other files for Edit Constraints page
-  // todo potentially: If possible add all button functionality, Implement way to display default materials list, CSV error checking?, input error checking?
+  // Importing existing CSV works, Loading default csv works, editing values works.
+  // weird bug currently when editing intially empty cells, updates the data but doesn't update the table until you scroll
+  // todo: Add blueprint for rest of ui, FIX WEIRD BUG WITH EDITING EMPTY VALUES
+  // todo potentially: add rest of button functionality (add, remove, clone etc)
 
-type CsvData = {
-  [key: string]: string;
-};
-
+const defaultMaterialsURL = "https://raw.githubusercontent.com/e3da/PowerSynth1-pkg/master/tech_lib/Material/Materials.csv";
 
 const MDKEditor: React.FC = () => {
   const handleMDKContinue = () => {
     console.log("Continue");
-    console.log(jsonData);
   }
   const handleMDKAdd = () => {
     console.log("Add");
   }
-  const handleMDKClone = () => {
-    console.log("Clone");
-  }
   const handleMDKRemove = () => {
     console.log("Remove");
   }
-  const handleMDKSelect = () => {
-    console.log("Select");
-  }
-  const handleMDKLoad = () => {
-    console.log("Load");
+  const handleMDKSave = () => {
+    console.log("Data: ", MDKData);
   }
 
 
-  const [csvFile, setCsvFile] = useState<File>();
-  const [jsonData, setJsonData] = useState<CsvData[]>([]);
-  const [editedJsonData, setEditedJsonData] = useState<CsvData[]>([]);
+  interface MDKDataFace {
+    name: any;
+    thermal_cond: any;
+    spec_heat_cap: any;
+    density: any;
+    electrical_res: any;
+    rel_permit: any;
+    rel_permeab: any;
+    q3d_id: any;
+    young_modulus: any;
+    poissons_ratios: any;
+    thermal_expansion_coeffcient: any; // dumb typo on coeffecient but i'll leave it because it needs to match
+  }
 
-  const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
+ 
+  const [MDKData, setMDKData] = useState<MDKDataFace[]>([]);
+    
+  const [csvError, setCsvError] = useState<string | null>(null);
+
+  // for now it handles uploaded materials file and then parses into json object then saved to MDKData
+  const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     console.log("HandleFileUpload");
-    if (event.target.files) {
-      setCsvFile(event.target.files[0]);
-    }
-  };
-
-  const handleCsvParse = (results: Papa.ParseResult<CsvData>) => {
-    console.log("handleCsvParse");
-    const jsonData = results.data;
-    setJsonData(jsonData);
-    setEditedJsonData(jsonData);
-  };
-
-  const handleCellChange = (newValue: string, rowIndex: number, field: string) => {
-    const newEditedJsonData = [...editedJsonData];
-    newEditedJsonData[rowIndex][field] = newValue;
-    setEditedJsonData(newEditedJsonData);
-  };
-
-  const saveChanges = () => {
-    console.log("saveChanges");
-    setJsonData(editedJsonData);
-  };
-
-  const convertCsvToJson = () => {
-    console.log("convertCsvToJson");
-    if (csvFile) {
-      Papa.parse(csvFile, {
+    const uploadedFile = e.target.files && e.target.files[0];
+    if (uploadedFile) {
+      Papa.parse(uploadedFile, {
         header: true,
-        complete: handleCsvParse,
+        complete: (results) => {
+          const parsedData = results.data as MDKDataFace[];
+          setMDKData(parsedData);
+        },
+        error: (error) => {
+          console.error(error);
+          setCsvError("Error passing CSV file");
+        },
       });
     }
   };
+  // Load button loads default materials .csv
+  // located on PS github pkg /tech_lib/Material/Materials.csv
+  const handleMDKLoad = async () => {
+    console.log("Load");
+    try {
+      const response = await fetch(defaultMaterialsURL);
+      const text = await response.text();
+      const result = Papa.parse(text, { header: true })
+      const parsedData = result.data as MDKDataFace[];
+      setMDKData(parsedData);
+    } catch (error) {
+      console.error(error);
+    }
+  }
 
 
   return (
     <div className = "constraint-layerstack-mdk">
-      <h2> PowerSynth MDK Window (Button functionality other than save not implemented) </h2>
+      <h2> PowerSynth MDK Window (Some features missing) </h2>
       <h3> Import Materials.csv </h3>
       <div className="import-section">
         <input type="file" accept="text/csv" onChange={handleFileUpload} />
-        <button className="display-button" onClick = {convertCsvToJson}>Display Materials</button>
       </div>
 
       <div className = "table-box">
-        <table>
-          <thead>
-            <tr>
-              <th> Name </th>
-              <th> Thermal_Cond </th>
-              <th> Spec_Heat_Cap</th>
-              <th> Density </th>
-              <th> Electrical_Res </th>
-              <th> Rel_Permit </th>
-              <th> Rel_Permeab </th>
-              <th> q3d_id </th>
-              <th> Young_Modulus </th>
-              <th> Poissons_ratios </th>
-              <th> Thermal_Expansion_Coefficient </th>
-            </tr>
-          </thead>
-          <tbody>
-          {editedJsonData.map((row, rowIndex) => (
-                <tr key={rowIndex}>
-                  {Object.keys(row).map((field, fieldIndex) => (
-                    <td key={fieldIndex}>
-                      <input
-                        type="text"
-                        value={row[field]}
-                        onChange={(event) =>
-                          handleCellChange(event.target.value, rowIndex, field)
-                        }
-                      />
-                  </td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
+      {MDKData.length > 0 ? (
+        <Table2 numRows={MDKData.length}>
+          <Column
+            name="name"
+            cellRenderer={(rowIndex) => (
+              <EditableCell2
+                value={MDKData[rowIndex].name}
+                onConfirm={(value) => {
+                  const newData=[...MDKData];
+                  newData[rowIndex].name = value.toString();
+                  setMDKData(newData);
+                }}
+              />
+            )}
+          />
+          <Column
+            name="thermal_cond"
+            cellRenderer={(rowIndex) => (
+              <EditableCell2
+                value={MDKData[rowIndex].thermal_cond}
+                onConfirm={(value) => {
+                  const newData=[...MDKData];
+                  newData[rowIndex].thermal_cond = value;
+                  setMDKData(newData);
+                }}
+              />
+            )}
+          />
+          <Column
+            name="spec_heat_cap"
+            cellRenderer={(rowIndex) => (
+              <EditableCell2
+                value={MDKData[rowIndex].spec_heat_cap}
+                onConfirm={(value) => {
+                  const newData=[...MDKData];
+                  newData[rowIndex].spec_heat_cap = value;
+                  setMDKData(newData);
+                }}
+              />
+            )}
+          />
+          <Column
+            name="density"
+            cellRenderer={(rowIndex) => (
+              <EditableCell2
+                value={MDKData[rowIndex].density}
+                onConfirm={(value) => {
+                  const newData=[...MDKData];
+                  newData[rowIndex].density = value;
+                  setMDKData(newData);
+                }}
+              />
+            )}
+          />
+          <Column
+          name="electrical_res"
+          cellRenderer={(rowIndex) => (
+            <EditableCell2
+              value={MDKData[rowIndex].electrical_res}
+              onConfirm={(value) => {
+                const newData=[...MDKData];
+                newData[rowIndex].electrical_res = value;
+                setMDKData(newData);
+              }}
+            />
+          )}
+        />
+        <Column
+          name="rel_permit"
+          cellRenderer={(rowIndex) => (
+            <EditableCell2
+              value={MDKData[rowIndex].rel_permit}
+              onConfirm={(value) => {
+                const newData=[...MDKData];
+                newData[rowIndex].rel_permit = value;
+                setMDKData(newData);
+              }}
+            />
+          )}
+        />
+        <Column
+          name="rel_permeab"
+          cellRenderer={(rowIndex) => (
+            <EditableCell2
+              value={MDKData[rowIndex].rel_permeab}
+              onConfirm={(value) => {
+                const newData=[...MDKData];
+                newData[rowIndex].rel_permeab = value;
+                setMDKData(newData);
+              }}
+            />
+          )}
+        />
+        <Column
+          name="q3d_id"
+          cellRenderer={(rowIndex) => (
+            <EditableCell2
+              value={MDKData[rowIndex].q3d_id}
+              onConfirm={(value) => {
+                const newData=[...MDKData];
+                newData[rowIndex].q3d_id = value;
+                setMDKData(newData);
+              }}
+            />
+          )}
+        />
+        <Column
+          name="young_modulus"
+          cellRenderer={(rowIndex) => (
+            <EditableCell2
+              value={MDKData[rowIndex].young_modulus}
+              onConfirm={(value) => {
+                const newData=[...MDKData];
+                newData[rowIndex].young_modulus = value;
+                setMDKData(newData);
+              }}
+            />
+          )}
+        />
+        <Column
+          name="poissons_ratios"
+          cellRenderer={(rowIndex) => (
+            <EditableCell2
+              value={MDKData[rowIndex].poissons_ratios}
+              onConfirm={(value) => {
+                const newData=[...MDKData];
+                newData[rowIndex].poissons_ratios = value;
+                setMDKData(newData);
+              }}
+            />
+          )}
+        />
+        <Column
+          name="thermal_expansion_coeffcient"
+          cellRenderer={(rowIndex) => (
+            <EditableCell2
+              value={MDKData[rowIndex].thermal_expansion_coeffcient}
+              onConfirm={(value) => {
+                const newData=[...MDKData];
+                newData[rowIndex].thermal_expansion_coeffcient = value;
+                setMDKData(newData);
+                
+              }}
+            />
+          )}
+        />
+        </Table2>
+      ) : null}
       </div>
 
 
       <div className= "edit-buttons">
           <button onClick={handleMDKAdd}>Add</button>
-          <button onClick={handleMDKClone}>Clone</button>
           <button onClick={handleMDKRemove}>Remove</button>
       </div>
       <div className= "bottom-buttons">
-        <button onClick={handleMDKSelect}>Select</button>
         <button onClick={handleMDKLoad}>Load</button>
-        <button onClick={saveChanges}>Save</button>
+        <button onClick={handleMDKSave}> Save </button>
         <button onClick={handleMDKContinue}>Continue</button>
       </div>
     </div>
