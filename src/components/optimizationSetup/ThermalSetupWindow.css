@@ -39,10 +39,34 @@ body{
     display: flex;
     margin-bottom: 1em;
 }
+.midSectionDiv hr{
+    margin: 0;
+}
 .tableDiv{
     width: 60%;
-    height: 200px;
+    height: 18rem;
     background-color: blue;
+    display:flex;
+    flex-direction: column;
+}
+.tableHeader{
+    display: flex;
+    align-items: center;
+    margin: 0.2em;
+
+}
+.tableHeader div{
+    width: 50%;
+    text-align: center;
+}
+.tableContainer{
+    background-color:darkgreen;
+    width: 100%;
+    overflow-y: scroll;
+}
+.tableElement{
+    display: flex;
+    align-items: center;
 }
 .midButtonsDiv{
     width: 40%;

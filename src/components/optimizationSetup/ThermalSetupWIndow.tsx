@@ -9,7 +9,7 @@ import {
     FocusStyleManager,
     Intent,
     NumericInput,
-    NumericInputProps
+    Tag
   } from "@blueprintjs/core";
 import { Select2 } from "@blueprintjs/select";
 
@@ -38,7 +38,49 @@ const ThermalSetupWindow: React.FC = () => {
             </div>
 
             <div className="midSectionDiv">
-                <div className="tableDiv"></div>
+                <div className="tableDiv">
+                    <div className="tableHeader">
+                        <div>Device</div>
+                        <div>Power</div>
+                    </div>
+                    <hr />
+                    <div className="tableContainer">
+                        <div className="tableElement">
+                            <Tag minimal>1</Tag>
+                            <div className="bp4-html-select bp4-fill">
+                                <select>
+                                    <option value="1">ParaPower</option>
+                                    <option value="2">goober zone</option>
+                                </select>
+                                <span className="bp4-icon bp4-icon-caret-down"></span>
+                            </div>
+                            <div className="bp4-html-select bp4-fill">
+                                <select>
+                                    <option value="1">ParaPower</option>
+                                    <option value="2">goober zone</option>
+                                </select>
+                                <span className="bp4-icon bp4-icon-caret-down"></span>
+                            </div>
+                        </div>
+                        <div className="tableElement">something</div>
+                        <div className="tableElement">something</div>
+                        <div className="tableElement">something</div>
+                        <div className="tableElement">something</div>
+                        <div className="tableElement">something</div>
+                        <div className="tableElement">something</div>
+                        <div className="tableElement">something</div>
+                        <div className="tableElement">something</div>
+                        <div className="tableElement">something</div>
+                        <div className="tableElement">something</div>
+                        <div className="tableElement">something</div>
+                        <div className="tableElement">something</div>
+                        <div className="tableElement">something</div>
+                        <div className="tableElement">something</div>
+                        <div className="tableElement">something</div>
+                        <div className="tableElement">something</div>
+                    </div>
+                </div>
+
                 <div className="midButtonsDiv">
                     <div>
                     <Button small intent={Intent.PRIMARY} className="midButtons">Add Device</Button>
