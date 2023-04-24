@@ -115,9 +115,7 @@ const OptimizationSetupPopup: React.FC<{isPopupOpen: boolean}> = ({isPopupOpen})
                             <p>Electrical Setup</p>
                         </div>
                         <div className="popup-content">
-                            <p className="popup-container-text">
                                 <ElectricalSetupWindow />
-                            </p>
                         </div>
                         <div className="buttons-container">
                             <Button text="Continue" onClick={handleElectricalSetupButton}/>
