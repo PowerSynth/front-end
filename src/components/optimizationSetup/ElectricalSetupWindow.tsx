@@ -25,10 +25,10 @@ const ElectricalSetupWindow: React.FC = () => {
     const [numTableElements, setNumTableElements] = useState(0); // These are currently unused
 
     const handleAddDevice = () => {
-        
+
     };
     const handleRemoveDevice = () => {
-        
+
     };
 
     const handleTraceOrientationFilePath = (event: any) => {
@@ -40,7 +40,7 @@ const ElectricalSetupWindow: React.FC = () => {
         setParasiticModelFile(event.target.files[0].name);
         setParasiticModelFileSelected(true);
     };
-    
+
     return (
         <div className="mainDiv">
             <div className="electricalSetupText">Electrical Setup</div>
@@ -82,7 +82,7 @@ const ElectricalSetupWindow: React.FC = () => {
                         <ElectricalSetupTableElement key={3} index={3}/>
                         {/*
                         These three elements are here for example.
-                        In the actual project, they should be added from the 'Add Device' button. 
+                        In the actual project, they should be added from the 'Add Device' button.
                          */}
                     </div>
                 </div>
