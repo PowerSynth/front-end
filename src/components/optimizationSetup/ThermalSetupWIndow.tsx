@@ -19,12 +19,12 @@ const ThermalSetupWindow: React.FC = () => {
     const [numTableElements, setNumTableElements] = useState(0); // These are currently unused
 
     const handleAddDevice = () => {
-        
+
     };
     const handleRemoveDevice = () => {
-        
+
     };
-    
+
     return (
         <div className="mainDiv">
             <div className="thermalSetupText">Thermal Setup</div>
@@ -55,7 +55,7 @@ const ThermalSetupWindow: React.FC = () => {
                         <ThermalSetupTableElement key={3} index={3}/>
                         {/*
                         These three elements are here for example.
-                        In the actual project, they should be added from the 'Add Device' button. 
+                        In the actual project, they should be added from the 'Add Device' button.
                          */}
                     </div>
                 </div>
