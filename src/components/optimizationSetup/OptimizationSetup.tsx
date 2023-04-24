@@ -130,9 +130,7 @@ const OptimizationSetupPopup: React.FC<{isPopupOpen: boolean}> = ({isPopupOpen})
                             <p>Thermal Setup</p>
                         </div>
                         <div className="popup-content">
-                            <p className="popup-container-text">
                                 <ThermalSetupWindow />
-                            </p>
                         </div>
                         <div className="buttons-container">
                             <Button text="Continue" onClick={handleThermalSetupButton}/>
