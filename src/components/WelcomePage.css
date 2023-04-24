@@ -7,7 +7,7 @@
 }
 
 .welcome-page h1 {
-	margin-top: 50px;
+	margin-top: 20px;
 	font-size: 36px;
 	font-weight: bold;
 	color: #333;
@@ -24,4 +24,9 @@
   cursor: pointer;
   width: 200px;
   height: 50px;
+}
+
+#power-synth-logo {
+  margin-top: 50px;
+  width: 30%
 }
