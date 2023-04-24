@@ -42,14 +42,14 @@ const EditLayerStack: React.FC = () => {
 
 
       {/*
-        TABLE: hard-coded columns 
+        TABLE: hard-coded columns
         pulls data from JSON object that gets updated into layerStackData
       */}
       <div className="table-box">
         <Table2 numRows={layerStackData.length} enableRowHeader={false}>
           {/* ID COLUMN */}
-          <Column 
-            name="ID" 
+          <Column
+            name="ID"
               cellRenderer={(rowIndex) => (
                 <EditableCell2
                   value={layerStackData[rowIndex].ID.toString()}
@@ -63,8 +63,8 @@ const EditLayerStack: React.FC = () => {
           />
 
           {/* NAME COLUMN */}
-          <Column 
-            name="Name" 
+          <Column
+            name="Name"
               cellRenderer={(rowIndex) => (
                 <EditableCell2
                   value={layerStackData[rowIndex].Name.toString()}
@@ -78,8 +78,8 @@ const EditLayerStack: React.FC = () => {
             />
 
           {/* ORIGIN COLUMN */}
-          <Column 
-            name="Origin" 
+          <Column
+            name="Origin"
               cellRenderer={(rowIndex) => (
                 <EditableCell2
                   value={layerStackData[rowIndex].Origin.toString()}
@@ -93,8 +93,8 @@ const EditLayerStack: React.FC = () => {
             />
 
           {/* WIDTH COLUMN */}
-          <Column 
-            name="Width" 
+          <Column
+            name="Width"
               cellRenderer={(rowIndex) => (
                 <EditableCell2
                   value={layerStackData[rowIndex].Width.toString()}
@@ -108,8 +108,8 @@ const EditLayerStack: React.FC = () => {
             />
 
           {/* LENGTH COLUMN */}
-          <Column 
-            name="Length" 
+          <Column
+            name="Length"
               cellRenderer={(rowIndex) => (
                 <EditableCell2
                   value={layerStackData[rowIndex].Length.toString()}
@@ -123,8 +123,8 @@ const EditLayerStack: React.FC = () => {
             />
 
           {/* THICKNESS COLUMN */}
-          <Column 
-            name="Thickness" 
+          <Column
+            name="Thickness"
               cellRenderer={(rowIndex) => (
                 <EditableCell2
                   value={layerStackData[rowIndex].Thickness.toString()}
@@ -138,8 +138,8 @@ const EditLayerStack: React.FC = () => {
             />
 
           {/* MATERIAL COLUMN */}
-          <Column 
-            name="Material" 
+          <Column
+            name="Material"
               cellRenderer={(rowIndex) => (
                 <EditableCell2
                   value={layerStackData[rowIndex].Material.toString()}
@@ -153,8 +153,8 @@ const EditLayerStack: React.FC = () => {
             />
 
           {/* TYPE COLUMN */}
-          <Column 
-            name="Type" 
+          <Column
+            name="Type"
               cellRenderer={(rowIndex) => (
                 <EditableCell2
                   value={layerStackData[rowIndex].Type.toString()}
@@ -168,8 +168,8 @@ const EditLayerStack: React.FC = () => {
             />
 
           {/* ELECTRICAL COLUMN */}
-          <Column 
-            name="Electrical" 
+          <Column
+            name="Electrical"
               cellRenderer={(rowIndex) => (
                 <EditableCell2
                   value={layerStackData[rowIndex].Electrical.toString()}
