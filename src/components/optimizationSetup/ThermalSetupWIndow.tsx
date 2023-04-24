@@ -9,7 +9,8 @@ import {
     FocusStyleManager,
     Intent,
     NumericInput,
-    Tag
+    Tag,
+    Divider
   } from "@blueprintjs/core";
 import { Select2 } from "@blueprintjs/select";
 
@@ -39,54 +40,33 @@ const ThermalSetupWindow: React.FC = () => {
 
             <div className="midSectionDiv">
                 <div className="tableDiv">
-                    <div className="tableHeader">
-                        <div>Device</div>
-                        <div>Power</div>
-                    </div>
-                    <hr />
                     <div className="tableContainer">
-                        <div className="tableElement">
-                            <Tag minimal>1</Tag>
-                            <div className="bp4-html-select bp4-fill">
-                                <select>
-                                    <option value="1">ParaPower</option>
-                                    <option value="2">goober zone</option>
-                                </select>
-                                <span className="bp4-icon bp4-icon-caret-down"></span>
-                            </div>
-                            <div className="bp4-html-select bp4-fill">
-                                <select>
-                                    <option value="1">ParaPower</option>
-                                    <option value="2">goober zone</option>
-                                </select>
-                                <span className="bp4-icon bp4-icon-caret-down"></span>
-                            </div>
+                        <div className="tableHeader">
+                            <div>Device</div>
+                            <div>Power</div>
                         </div>
-                        <div className="tableElement">something</div>
-                        <div className="tableElement">something</div>
-                        <div className="tableElement">something</div>
-                        <div className="tableElement">something</div>
-                        <div className="tableElement">something</div>
-                        <div className="tableElement">something</div>
-                        <div className="tableElement">something</div>
-                        <div className="tableElement">something</div>
-                        <div className="tableElement">something</div>
-                        <div className="tableElement">something</div>
-                        <div className="tableElement">something</div>
-                        <div className="tableElement">something</div>
-                        <div className="tableElement">something</div>
-                        <div className="tableElement">something</div>
-                        <div className="tableElement">something</div>
-                        <div className="tableElement">something</div>
+                        <hr />
+                        <div className="tableElement">
+                        <Tag minimal>1</Tag>
+                            <div className="bp4-html-select bp4-fill">
+                                <select>
+                                    <option value="1">ParaPower</option>
+                                    <option value="2">goober zone</option>
+                                </select>
+                                <span className="bp4-icon bp4-icon-caret-down"></span>
+                            </div>
+                            <Divider/>
+                            <input className="bp4-input bp4-fill" type="text" dir="auto" />
+                        </div>
                     </div>
                 </div>
 
                 <div className="midButtonsDiv">
                     <div>
-                    <Button small intent={Intent.PRIMARY} className="midButtons">Add Device</Button>
+                    <Button small className="midButtons">Add Device</Button>
                     </div>
                     <div>
-                    <Button small intent={Intent.PRIMARY} className="midButtons">Remove Device</Button>
+                    <Button small className="midButtons">Remove Device</Button>
                     </div>
                 </div>
             </div>

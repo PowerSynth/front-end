@@ -2,7 +2,7 @@ body{
     background-color: black;
 }
 .mainDiv{
-    background-color: aquamarine;
+    background-color: white;
     width: 32rem;
     padding: 0.5em;
 }
@@ -41,18 +41,24 @@ body{
 }
 .midSectionDiv hr{
     margin: 0;
+    margin-bottom: 0.1em;
+    color: lightgray;
 }
 .tableDiv{
     width: 60%;
     height: 18rem;
-    background-color: blue;
     display:flex;
     flex-direction: column;
+    border-style:solid;
+    border-width:thin;
+    border-color: lightgray;
+    border-radius: 1%;
 }
 .tableHeader{
     display: flex;
     align-items: center;
-    margin: 0.2em;
+    padding: 0.2em;
+    background-color: lightgrey;
 
 }
 .tableHeader div{
@@ -60,17 +66,19 @@ body{
     text-align: center;
 }
 .tableContainer{
-    background-color:darkgreen;
     width: 100%;
     overflow-y: scroll;
 }
 .tableElement{
     display: flex;
     align-items: center;
+    
+}
+.tableElement :first-child{
+    width: 10%;
 }
 .midButtonsDiv{
     width: 40%;
-    background-color: blueviolet;
     display: flex;
     flex-direction: column-reverse;
 
@@ -78,7 +86,6 @@ body{
 .midButtonsDiv div{
     display: flex;
     justify-content: end;
-    background-color: brown;
     padding-left: 20%;
     margin-top: 0.5rem;
 }
