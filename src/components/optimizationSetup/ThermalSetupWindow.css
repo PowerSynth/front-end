@@ -1,0 +1,50 @@
+body{
+    background-color: black;
+}
+.mainDiv{
+    background-color: aquamarine;
+    width: 32rem;
+    padding: 0.5em;
+}
+.thermalSetupText{
+    font-weight: bold;
+    margin-bottom: 1em;
+}
+.modelSelectDiv{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1em;
+    align-items: center;
+}
+.textInputBarDiv{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1em;
+    align-items: center;
+}
+.textInputBarDiv div{
+    width: 100%;
+}
+.midSectionDiv{
+    display: flex;
+    margin-bottom: 1em;
+}
+.tableDiv{
+    width: 60%;
+    height: 200px;
+    background-color: blue;
+}
+.midButtonsDiv{
+    width: 40%;
+    background-color: blueviolet;
+    display: flex;
+    flex-direction: column-reverse;
+
+}
+.midButtonsDiv div{
+    display: flex;
+    justify-content: end;
+    background-color: brown;
+    padding-left: 20%;
+    margin-top: 0.5rem;
+}
