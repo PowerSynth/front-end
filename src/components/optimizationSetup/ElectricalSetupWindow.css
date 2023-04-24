@@ -70,7 +70,7 @@
 .tableElement{
     display: flex;
     align-items: center;
-    
+
 }
 .tableElement :first-child{
     width: 10%;
