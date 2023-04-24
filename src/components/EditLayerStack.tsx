@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from 'react';
 import { Table2, Column, EditableCell2 } from '@blueprintjs/table';
+import defaultLayerStack from "./defaultLayerStack.json";
 import "./TablePages.css";
 import '@blueprintjs/core/lib/css/blueprint.css';
 import '@blueprintjs/table/lib/css/table.css';
@@ -20,15 +21,8 @@ interface TableData1 {
   Electrical: any;
 }
 
-const initialLayerStack: TableData1[] = [
-  {ID: 1, Name: "Baseplate", Origin: "0,0", Width: 50, Length: 60, Thickness: 5, Material: "copper", Type: "p", Electrical: "F"},
-  {ID: 2, Name: "Bottom_Metal", Origin: "0,0", Width: 40, Length: 50, Thickness: 0.2, Material: "copper", Type: "p", Electrical: "G"},
-  {ID: 3, Name: "Ceramic1", Origin: "0,0", Width: 40, Length: 50, Thickness: 0.64, Material: "Al_N", Type: "p", Electrical: "D"},
-  {ID: 4, Name: "I1", Origin: "0,0", Width: 40, Length: 50, Thickness: 0.2, Material: "copper", Type: "p", Electrical: "S"},
-  {ID: 5, Name: "C1", Origin: '', Width: 40, Length: 50, Thickness: 0.18, Material: "SiC", Type: "a", Electrical: "C"}
-]
+const initialLayerStack = defaultLayerStack as TableData1[];
 
-// TODO ?
 const EditLayerStack: React.FC = () => {
   const [layerStackData, setlayerStackData] = useState<TableData1[]>(initialLayerStack);
 
