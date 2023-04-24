@@ -5,7 +5,7 @@ import RunProject from "./popup/RunProject";
 import CreateProject from "./popup/CreateProject";
 import '@blueprintjs/core/lib/css/blueprint.css';
 import './popup/popup.css'
-import PowerSynthLogo from './photos/PowerSynthLogo.png'
+import PowerSynthLogo from '../images/PowerSynthLogo.png'
 
 
 
