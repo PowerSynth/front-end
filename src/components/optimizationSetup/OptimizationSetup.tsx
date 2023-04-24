@@ -6,6 +6,7 @@
 import { useState } from "react";
 import {  Overlay, Classes, Button, Card } from "@blueprintjs/core";
 import OptimizationBody from "./OptionBody";
+import ElectricalSetupWindow from "./ElectricalSetupWindow";
 import './OptimizationSetup.css'
 import '@blueprintjs/core/lib/css/blueprint.css';
 import '../popup/popup.css'
@@ -115,7 +116,7 @@ const OptimizationSetupPopup: React.FC<{isPopupOpen: boolean}> = ({isPopupOpen})
                         </div>
                         <div className="popup-content">
                             <p className="popup-container-text">
-                                Electrical Setup component will be routed here
+                                <ElectricalSetupWindow />
                             </p>
                         </div>
                         <div className="buttons-container">
