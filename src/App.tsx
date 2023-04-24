@@ -12,7 +12,7 @@ const App: React.FC = () => { //Replaced WelcomePage with ThermalSetupWindow for
   return (
     <div>
       <Routes>
-        <Route path="/" element={<ThermalSetupWindow />} />
+        <Route path="/" element={<WelcomePage />} />
         <Route path="/initial-structure-and-layout" element={<InitialStructureAndLayout />} />
         <Route path="/edit-constraints" element={<EditConstraints />} />
         <Route path="/edit-layer-stack" element={<EditLayerStack />} />

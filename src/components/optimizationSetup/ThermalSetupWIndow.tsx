@@ -7,20 +7,24 @@ import "./ThermalSetupWindow.css";
 import {
     Button,
     FocusStyleManager,
-    Intent,
     NumericInput,
     Tag,
     Divider
   } from "@blueprintjs/core";
-import { Select2 } from "@blueprintjs/select";
 
 FocusStyleManager.onlyShowFocusOnTabs();
 
 const ThermalSetupWindow: React.FC = () => {
-    const stylish = {
-        margin: "0;",
-    };
+    const [tableElements, setTableElements] = useState([]);
+    const [numTableElements, setNumTableElements] = useState(0); // These are currently unused
 
+    const handleAddDevice = () => {
+        
+    };
+    const handleRemoveDevice = () => {
+        
+    };
+    
     return (
         <div className="mainDiv">
             <div className="thermalSetupText">Thermal Setup</div>
@@ -46,24 +50,19 @@ const ThermalSetupWindow: React.FC = () => {
                             <div>Power</div>
                         </div>
                         <hr />
-                        <div className="tableElement">
-                        <Tag minimal>1</Tag>
-                            <div className="bp4-html-select bp4-fill">
-                                <select>
-                                    <option value="1">ParaPower</option>
-                                    <option value="2">goober zone</option>
-                                </select>
-                                <span className="bp4-icon bp4-icon-caret-down"></span>
-                            </div>
-                            <Divider/>
-                            <input className="bp4-input bp4-fill" type="text" dir="auto" />
-                        </div>
+                        <ThermalSetupTableElement key={1} index={1}/>
+                        <ThermalSetupTableElement key={2} index={2}/>
+                        <ThermalSetupTableElement key={3} index={3}/>
+                        {/*
+                        These three elements are here for example.
+                        In the actual project, they should be added from the 'Add Device' button. 
+                         */}
                     </div>
                 </div>
 
                 <div className="midButtonsDiv">
                     <div>
-                    <Button small className="midButtons">Add Device</Button>
+                    <Button small className="midButtons" onClick={handleAddDevice}>Add Device</Button>
                     </div>
                     <div>
                     <Button small className="midButtons">Remove Device</Button>
@@ -79,6 +78,29 @@ const ThermalSetupWindow: React.FC = () => {
                 <div> Ambient Temperature:</div>
                 <NumericInput buttonPosition="none" small allowNumericCharactersOnly className="numeric-input"></NumericInput>
             </div>
+        </div>
+    );
+};
+
+type ElementProps = {
+    index: number;
+};
+
+const ThermalSetupTableElement: React.FC<ElementProps> = (props) =>{
+    return (
+        <div className="tableElement">
+            <Tag minimal>{props.index}</Tag>
+            <div className="bp4-html-select bp4-fill">
+                <select>
+                    <option value="1">D1</option>
+                    <option value="2">D2</option>
+                    <option value="3">D3</option>
+                    <option value="4">D4</option>
+                </select>
+                <span className="bp4-icon bp4-icon-caret-down"></span>
+            </div>
+            <Divider/>
+            <input className="bp4-input bp4-fill" type="number" dir="auto" />
         </div>
     );
 };
