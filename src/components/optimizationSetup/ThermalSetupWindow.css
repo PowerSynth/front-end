@@ -25,6 +25,12 @@ body{
     margin-bottom: 1em;
     align-items: center;
 }
+.numeric-input{
+    margin-right: 0 !important;
+}
+.numeric-input :first-child{
+    margin-right: 0 !important;
+}
 .textInputBarDiv div{
     white-space: nowrap;
     margin-right: 1em;
