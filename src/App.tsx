@@ -5,6 +5,7 @@ import WelcomePage from './components/WelcomePage';
 import EditConstraints from './components/EditConstraints';
 import EditLayerStack from './components/EditLayerStack';
 import InitialStructureAndLayout from './components/InitialStructureAndLayout';
+import ElectricalSetupWindow from './components/optimizationSetup/ElectricalSetupWindow';
 import { Route, Routes } from 'react-router-dom'
 
 const App: React.FC = () => {
