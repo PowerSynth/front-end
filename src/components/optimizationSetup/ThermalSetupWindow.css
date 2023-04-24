@@ -16,6 +16,9 @@ body{
     margin-bottom: 1em;
     align-items: center;
 }
+.modelSelectDiv :first-child{
+    width: 100%;
+}
 .textInputBarDiv{
     display: flex;
     justify-content: space-between;
@@ -23,7 +26,8 @@ body{
     align-items: center;
 }
 .textInputBarDiv div{
-    width: 100%;
+    white-space: nowrap;
+    margin-right: 1em;
 }
 .midSectionDiv{
     display: flex;

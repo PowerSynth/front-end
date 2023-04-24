@@ -21,7 +21,12 @@ const ThermalSetupWindow: React.FC = () => {
             <div className="thermalSetupText">Thermal Setup</div>
             <div className="modelSelectDiv">
                 <div>Model Select:</div>
-                <input type="text" />
+                <div className="bp4-html-select bp4-fill">
+                    <select disabled>
+                        <option value="1">ParaPower</option>
+                    </select>
+                    <span className="bp4-icon bp4-icon-double-caret-vertical"></span>
+                </div>
             </div>
             <div className="textInputBarDiv">
                 <div>Measure Name:</div>
