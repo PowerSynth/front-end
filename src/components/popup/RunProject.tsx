@@ -30,13 +30,13 @@ const RunProject: React.FC<{popupIsOpen: any, closePopup: any}> = ({popupIsOpen,
     //Handle user clicking 'Run' button -- to be implemented, needs to send data to backend and go to loading screen & then solutions page
 	const handleRunProject = () => {
 		console.log("Running...");
-        
+
         //Render loading screen variable
         setIsLoading(true);
 
         //Appending files to the formData
         files.map((f: any) => {formData.append("file", f)});
-        
+
         //Post to backend
         axios.post('http://localhost:8080/api/powersynth', formData, {headers:{"Content-Type": "multipart/form-data"}})
         .then((res: any) =>{
@@ -57,9 +57,9 @@ const RunProject: React.FC<{popupIsOpen: any, closePopup: any}> = ({popupIsOpen,
             // var solutionFiles: any;
             // unzip.then((contents: any) => {
             //     solutionFiles = contents.files;
-            // }) 
+            // })
 
-            
+
 
         })
         .catch((err: any) => {
@@ -83,7 +83,7 @@ const RunProject: React.FC<{popupIsOpen: any, closePopup: any}> = ({popupIsOpen,
                                 <Button text="Cancel" onClick={closePopup}/>
                                 <Button className="welcome-page-button" text="Run" onClick={handleRunProject}/>
                             </div>
-                        
+
                         </Card>
                     </div>
                 </Overlay>

@@ -28,7 +28,7 @@ const LayoutSelection: React.FC<{}> = () => {
         .then((res: any) => {
             FileDownload(res.data, "download.png")
         })
-       
+
     }
 
 
