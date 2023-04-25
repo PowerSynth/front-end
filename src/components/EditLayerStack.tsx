@@ -1,7 +1,9 @@
 import React from "react";
 import { useState } from 'react';
 import { Table2, Column, EditableCell2 } from '@blueprintjs/table';
-import defaultLayerStack from "./defaultLayerStack.json";
+import { Button, HotkeysProvider } from '@blueprintjs/core';
+import Papa from 'papaparse';
+import defaultLayerStack from "./defaultJSONData/defaultLayerStack.json";
 import "./TablePages.css";
 import '@blueprintjs/core/lib/css/blueprint.css';
 import '@blueprintjs/table/lib/css/table.css';
@@ -28,12 +30,15 @@ const EditLayerStack: React.FC = () => {
 
   const handleContinue = () => {
 		console.log("Continue Button");
-    console.log("New Layer Stack Data: ", layerStackData);
+    // UNPARSE DATA INTO CSV FORMAT BEFORE NEXT PAGE
+    const layerStackCSV = Papa.unparse(layerStackData);
+    console.log(layerStackCSV);
     window.open("/edit-constraints", "_self");
 	};
 
 
   return (
+    <HotkeysProvider /* for some reason not having this causes tons of console messages when scrolling through table */>
     <div className="constraint-layerstack-mdk">
       <h2>Edit Layer Stack</h2>
       <h3>
@@ -187,8 +192,9 @@ const EditLayerStack: React.FC = () => {
       {/*
          Currently stays on bottom right of screen no matter the size and zoom, might change in future
       */}
-      <button className="layerstack-continue" onClick={handleContinue}>Continue</button>
+      <Button className="layerstack-continue" onClick={handleContinue}>Continue</Button>
 		</div>
+    </HotkeysProvider>
 	);
 };
 

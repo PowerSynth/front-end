@@ -2,7 +2,9 @@ import React from "react";
 import { useState } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import { Table2, Column, EditableCell2, RowHeaderCell2 } from '@blueprintjs/table';
-import defaultData from "./defaultConstraints.json";
+import { Button, HotkeysProvider } from '@blueprintjs/core';
+import Papa from 'papaparse';
+import defaultConstraintData from "./defaultJSONData/defaultConstraints.json";
 import 'react-tabs/style/react-tabs.css'; // Default Tab styling from react-tabs package
 import "./TablePages.css";
 import '@blueprintjs/core/lib/css/blueprint.css';
@@ -26,8 +28,23 @@ interface TableData {
   cap: any;
 }
 
-const EditConstraints: React.FC = () => {
-  const [constraintData, setconstraintData] = useState<TableData[]>(defaultData);
+interface constraintProp {
+  isNewProj: number;
+}
+
+const EditConstraints: React.FC<constraintProp> = ({ isNewProj }) => {
+  // isNewProj is check to let it know to use default values or constraint csv
+  let initialData: TableData[];
+  if (isNewProj === 1) {
+    // use default values
+    initialData = defaultConstraintData;
+  }
+  else {
+    // PLACEHOLDER, will need to pull constraint.csv data
+    initialData = defaultConstraintData;
+  }
+
+  const [constraintData, setconstraintData] = useState<TableData[]>(initialData);
 
   const table1 = constraintData.slice(0, 4) as TableData[];
   const table2 = constraintData.slice(5, 13) as TableData[];
@@ -43,13 +60,15 @@ const EditConstraints: React.FC = () => {
     // will probably implement json--> csv conversion here if not somewhere else
     // Papaparse has unparse function, can probably find way to overwrite csv file
     // might be better to implement it using a save button to not unnecessary overwrite if no changes made
-
+    const constraintCSV = Papa.unparse(constraintData);
+    console.log(constraintCSV);
     setIsOptionsPopupOpen(wasOptionsPopupOpen => !wasOptionsPopupOpen)
   };
 
 
 
   return (
+    <HotkeysProvider /* for some reason not having this causes tons of console messages  en scrolling through table*/>
     <div className="constraint-layerstack-mdk">
       <h2> Edit Constraints </h2>
       <h3> Please edit the values in the constraints.csv file, then click continue. </h3>
@@ -603,9 +622,10 @@ const EditConstraints: React.FC = () => {
       </Tabs>
 
       {/* Launches popup to set Optimization Constraints before before running project */}
-      <button className="constraints-continue" onClick={handleConstraintsContinue}>Continue</button>
+      <Button className="constraints-continue" onClick={handleConstraintsContinue}>Continue</Button>
         <OptimizationSetupPopup isPopupOpen={isOptionsPopupOpen} />
     </div>
+    </HotkeysProvider>
   );
 
 

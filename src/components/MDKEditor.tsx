@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Papa from 'papaparse';
 import { Table2, Column, EditableCell2 } from '@blueprintjs/table';
+import { Button, FileInput, HotkeysProvider } from '@blueprintjs/core';
 import "./TablePages.css";
 import '@blueprintjs/core/lib/css/blueprint.css';
 import '@blueprintjs/table/lib/css/table.css';
@@ -11,35 +12,27 @@ import '@blueprintjs/popover2/lib/css/blueprint-popover2.css';
   // todo: Add blueprint for rest of ui, FIX WEIRD BUG WITH EDITING EMPTY VALUES
   // todo potentially: add rest of button functionality (add, remove, clone etc)
 
+interface MDKDataFace {
+  name: any;
+  thermal_cond: any;
+  spec_heat_cap: any;
+  density: any;
+  electrical_res: any;
+  rel_permit: any;
+  rel_permeab: any;
+  q3d_id: any;
+  young_modulus: any;
+  poissons_ratios: any;
+  thermal_expansion_coeffcient: any; // dumb typo on coeffecient but i'll leave it because it needs to match
+}
+
 const defaultMaterialsURL = "https://raw.githubusercontent.com/e3da/PowerSynth1-pkg/master/tech_lib/Material/Materials.csv";
 
 const MDKEditor: React.FC = () => {
   const handleMDKContinue = () => {
     console.log("Continue");
-  }
-  const handleMDKAdd = () => {
-    console.log("Add");
-  }
-  const handleMDKRemove = () => {
-    console.log("Remove");
-  }
-  const handleMDKSave = () => {
-    console.log("Data: ", MDKData);
-  }
-
-
-  interface MDKDataFace {
-    name: any;
-    thermal_cond: any;
-    spec_heat_cap: any;
-    density: any;
-    electrical_res: any;
-    rel_permit: any;
-    rel_permeab: any;
-    q3d_id: any;
-    young_modulus: any;
-    poissons_ratios: any;
-    thermal_expansion_coeffcient: any; // dumb typo on coeffecient but i'll leave it because it needs to match
+    const mdkCSV = Papa.unparse(MDKData);
+    console.log(mdkCSV);
   }
 
  
@@ -48,9 +41,9 @@ const MDKEditor: React.FC = () => {
   const [csvError, setCsvError] = useState<string | null>(null);
 
   // for now it handles uploaded materials file and then parses into json object then saved to MDKData
-  const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
     console.log("HandleFileUpload");
-    const uploadedFile = e.target.files && e.target.files[0];
+    const uploadedFile = event.target.files?.[0];
     if (uploadedFile) {
       Papa.parse(uploadedFile, {
         header: true,
@@ -82,11 +75,12 @@ const MDKEditor: React.FC = () => {
 
 
   return (
+    <HotkeysProvider /* for some reason not having this causes tons of console messages when scrolling through table */>
     <div className = "constraint-layerstack-mdk">
-      <h2> PowerSynth MDK Window (Some features missing) </h2>
+      <h2> PowerSynth MDK Window </h2>
       <h3> Import Materials.csv </h3>
       <div className="import-section">
-        <input type="file" accept="text/csv" onChange={handleFileUpload} />
+        <FileInput buttonText="Import File" onInputChange={handleFileUpload} />
       </div>
 
       <div className = "table-box">
@@ -240,18 +234,19 @@ const MDKEditor: React.FC = () => {
       ) : null}
       </div>
 
-
+      {/* buttons located under the MDK table and at bottom right */}
       <div className= "edit-buttons">
-          <button onClick={handleMDKAdd}>Add</button>
-          <button onClick={handleMDKRemove}>Remove</button>
+        <Button >Add</Button>
+        <Button >Clone</Button>
+        <Button >Edit</Button>
+        <Button >Remove</Button>
       </div>
       <div className= "bottom-buttons">
-        <button onClick={handleMDKLoad}>Load</button>
-        <button onClick={handleMDKSave}> Save </button>
-        <button onClick={handleMDKContinue}>Continue</button>
+        <Button onClick={handleMDKLoad}>Load</Button>
+        <Button onClick={handleMDKContinue}>Continue</Button>
       </div>
     </div>
-
+  </HotkeysProvider>
   );
 };
 

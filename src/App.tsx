@@ -14,7 +14,7 @@ const App: React.FC = () => {
       <Routes>
         <Route path="/" element={<WelcomePage />} />
         <Route path="/initial-structure-and-layout" element={<InitialStructureAndLayout />} />
-        <Route path="/edit-constraints" element={<EditConstraints />} />
+        <Route path="/edit-constraints" element={<EditConstraints isNewProj={1} />} /> {/* isNewProj, if = 1 --> new project, else --> Run project */}
         <Route path="/edit-layer-stack" element={<EditLayerStack />} />
       </Routes>
     </div>
