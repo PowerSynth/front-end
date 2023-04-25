@@ -1,0 +1,168 @@
+.solutions-browser {
+    width: 100%;
+    height: 100vh;
+    background-color: #f5f5f5;
+    display: grid;
+    grid-template-columns: 50% 50%;   
+}
+
+.solutions-browser-item {
+    background-color: none;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.solutions-browser-item-title {
+    width: 90%;
+    height: 5%;
+    background-color: none;
+    display: flex;
+    align-items: center;
+}
+
+.solutions-browser-item-body {
+    width: 90%;
+    height: 90%;
+    background-color: #ebebeb;
+    border: 1px solid #c1c1c1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.visualization-header {
+    width: 95%;
+    height: 5%;
+    background-color: none;
+    display: flex;
+    align-items: center;
+}
+
+.visualization-header .bp4-button {
+    margin-top: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #333;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 25%;
+    height: 100%;
+    outline: none;
+}
+
+.visualization-header .bp4-button:hover {
+    background-color:#333;
+}
+
+.visualization-body {
+    width: 100%;
+    height: 95%;
+    background-color: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bp4-tabs {
+    margin-top: 5%;
+    height: 100%;
+    width: 95%; 
+}
+
+.bp4-tab-indicator-wrapper .bp4-tab-indicator {
+    background-color: green;
+    height: 10%;
+    width: 100%;    
+}
+
+.bp4-tab-list {
+    height: 5%;
+    width: 100%;
+    
+}
+
+.bp4-tab-list .bp4-tab {
+    color: black;
+    outline: none;
+}
+
+.bp4-tab-list .bp4-tab:hover {
+    color: black;
+}
+
+.bp4-tab-panel {
+    margin-top: 0px;
+    height: 94%;
+}
+
+.tab-content {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    border: 1px solid gray;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.solution-space {
+    width: 95%;
+    height: 70%;
+    margin-top: 20px;
+    border: 1px solid gray;
+    background-color: white;
+}
+
+.solution-data {
+    width: 95%;
+    height: 15%;
+    background-color: none;
+}
+
+.solution-data-item {
+    display: grid;
+    grid-template-columns: 20% 80%;
+    column-gap: 5%;
+    padding: 5px;
+}
+
+.solution-data-item .bp4-tag{
+    width: 20%;
+    background-color: #f5f5f5;
+    color: black;
+    border: 1px solid lightgray;
+}
+
+.layout-buttons {
+    width: 95%;
+    height: 15%;
+    background-color: none;
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    column-gap: 5px;
+    justify-content: center;
+    align-items: center;
+}
+
+.layout-buttons .bp4-button {
+    margin-top: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #333;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    height: 30%;
+    outline: none;
+}
+
+.layout-buttons .bp4-button:hover {
+    background-color:#333;
+}
+

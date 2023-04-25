@@ -11,10 +11,11 @@ import "./FileList.css";
 const FileList: React.FC<{files: any, removeFiles: any}> = ({files, removeFiles}) => {
     const deleteFileHandler = (_name: any) => {
         //axios.delete(`http://localhost:8080/upload?name=${_name}`, {headers:{"Content-Type": "application/x-www-form-urlencoded"}})
-        axios.post(`http://localhost:8080/delete`, {"name": _name}, {headers:{"Content-Type": "application/json"}})
-        .then((res) => removeFiles(_name))
-        .catch((err) => console.log(err))
+        // axios.post(`http://localhost:8080/delete`, {"name": _name}, {headers:{"Content-Type": "application/json"}})
+        // .then((res) => removeFiles(_name))
+        // .catch((err) => console.log(err))
 
+        removeFiles(_name);
         //Clearing the item from the form
         let form = (document.getElementById('file-upload-form') as HTMLInputElement)
         form.value = ""

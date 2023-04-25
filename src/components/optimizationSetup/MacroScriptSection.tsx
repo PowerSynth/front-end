@@ -17,9 +17,7 @@ const MacroScriptSection: React.FC<{}> = () => {
             </div>
             <div className="item-body">
                 <p>Floor Plan: </p><Tag minimal={true} round={false}>5</Tag>X<Tag minimal={true} round={false}>5</Tag>
-
                 <p>Plot Solution: </p><Checkbox checked={true}></Checkbox>
-
             </div>
         </div>
     )
