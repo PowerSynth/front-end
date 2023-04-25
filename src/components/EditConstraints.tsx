@@ -93,8 +93,8 @@ const EditConstraints: React.FC<constraintProp> = ({ isNewProj }) => {
                 <RowHeaderCell2 name={rowIndex === 0 ? "MinWidth" : rowIndex === 1 ? "MinLength" : rowIndex === 2 ? "MinHorExtension": rowIndex === 3 ? "MinVerExtension" : ""}/>
               )}
               />
-              <Column 
-                name="EMPTY" 
+              <Column
+                name="EMPTY"
                 cellRenderer={(rowIndex) => (
                   <EditableCell2 value={table1[rowIndex].EMPTY.toString()}
                     onConfirm={(value) => {
@@ -103,10 +103,10 @@ const EditConstraints: React.FC<constraintProp> = ({ isNewProj }) => {
                       setconstraintData(newData);
                     }}
                   />
-                )} 
+                )}
               />
-              <Column 
-                name="power_trace" 
+              <Column
+                name="power_trace"
                 cellRenderer={(rowIndex) => (
                   <EditableCell2 value={table1[rowIndex].power_trace}
                     onConfirm={(value) => {
@@ -115,10 +115,10 @@ const EditConstraints: React.FC<constraintProp> = ({ isNewProj }) => {
                       setconstraintData(newData);
                     }}
                   />
-                )} 
-              />              
-              <Column 
-                name="signal_trace" 
+                )}
+              />
+              <Column
+                name="signal_trace"
                 cellRenderer={(rowIndex) => (
                   <EditableCell2 value={table1[rowIndex].signal_trace}
                     onConfirm={(value) => {
@@ -127,10 +127,10 @@ const EditConstraints: React.FC<constraintProp> = ({ isNewProj }) => {
                       setconstraintData(newData);
                     }}
                   />
-                )} 
-              />                
-              <Column 
-                name="bonding wire pad" 
+                )}
+              />
+              <Column
+                name="bonding wire pad"
                 cellRenderer={(rowIndex) => (
                   <EditableCell2 value={table1[rowIndex]["bonding wire pad"]}
                     onConfirm={(value) => {
@@ -139,10 +139,10 @@ const EditConstraints: React.FC<constraintProp> = ({ isNewProj }) => {
                       setconstraintData(newData);
                     }}
                   />
-                )} 
-              />                
-              <Column 
-                name="power_lead" 
+                )}
+              />
+              <Column
+                name="power_lead"
                 cellRenderer={(rowIndex) => (
                   <EditableCell2 value={table1[rowIndex].power_lead}
                     onConfirm={(value) => {
@@ -151,10 +151,10 @@ const EditConstraints: React.FC<constraintProp> = ({ isNewProj }) => {
                       setconstraintData(newData);
                     }}
                   />
-                )} 
-              />   
-              <Column 
-                name="signal_lead" 
+                )}
+              />
+              <Column
+                name="signal_lead"
                 cellRenderer={(rowIndex) => (
                   <EditableCell2 value={table1[rowIndex].signal_lead}
                     onConfirm={(value) => {
@@ -163,10 +163,10 @@ const EditConstraints: React.FC<constraintProp> = ({ isNewProj }) => {
                       setconstraintData(newData);
                     }}
                   />
-                )} 
-              /> 
-              <Column 
-                name="MOS" 
+                )}
+              />
+              <Column
+                name="MOS"
                 cellRenderer={(rowIndex) => (
                   <EditableCell2 value={table1[rowIndex].MOS}
                     onConfirm={(value) => {
@@ -175,10 +175,10 @@ const EditConstraints: React.FC<constraintProp> = ({ isNewProj }) => {
                       setconstraintData(newData);
                     }}
                   />
-                )} 
-              /> 
-              <Column 
-                name="cap" 
+                )}
+              />
+              <Column
+                name="cap"
                 cellRenderer={(rowIndex) => (
                   <EditableCell2 value={table1[rowIndex].cap}
                     onConfirm={(value) => {
@@ -187,10 +187,10 @@ const EditConstraints: React.FC<constraintProp> = ({ isNewProj }) => {
                       setconstraintData(newData);
                     }}
                   />
-                )} 
-              /> 
+                )}
+              />
             </Table2>
-            
+
           </div>
         </TabPanel>
         ) : null }
@@ -200,8 +200,8 @@ const EditConstraints: React.FC<constraintProp> = ({ isNewProj }) => {
         <TabPanel>
           <div className="table-box">
           <Table2 numRows={table2.length} enableRowHeader={true} >
-            <Column 
-                name="EMPTY" 
+            <Column
+                name="EMPTY"
                 cellRenderer={(rowIndex) => (
                   <EditableCell2 value={table2[rowIndex].EMPTY.toString()}
                     onConfirm={(value) => {
@@ -210,10 +210,10 @@ const EditConstraints: React.FC<constraintProp> = ({ isNewProj }) => {
                       setconstraintData(newData);
                     }}
                   />
-                )} 
+                )}
               />
-              <Column 
-                name="power_trace" 
+              <Column
+                name="power_trace"
                 cellRenderer={(rowIndex) => (
                   <EditableCell2 value={table2[rowIndex].power_trace.toString()}
                     onConfirm={(value) => {
@@ -222,10 +222,10 @@ const EditConstraints: React.FC<constraintProp> = ({ isNewProj }) => {
                       setconstraintData(newData);
                     }}
                   />
-                )} 
-              />              
-              <Column 
-                name="signal_trace" 
+                )}
+              />
+              <Column
+                name="signal_trace"
                 cellRenderer={(rowIndex) => (
                   <EditableCell2 value={table2[rowIndex].signal_trace}
                     onConfirm={(value) => {
@@ -234,10 +234,10 @@ const EditConstraints: React.FC<constraintProp> = ({ isNewProj }) => {
                       setconstraintData(newData);
                     }}
                   />
-                )} 
-              />                
-              <Column 
-                name="bonding wire pad" 
+                )}
+              />
+              <Column
+                name="bonding wire pad"
                 cellRenderer={(rowIndex) => (
                   <EditableCell2 value={table2[rowIndex]["bonding wire pad"]}
                     onConfirm={(value) => {
@@ -246,10 +246,10 @@ const EditConstraints: React.FC<constraintProp> = ({ isNewProj }) => {
                       setconstraintData(newData);
                     }}
                   />
-                )} 
-              />                
-              <Column 
-                name="power_lead" 
+                )}
+              />
+              <Column
+                name="power_lead"
                 cellRenderer={(rowIndex) => (
                   <EditableCell2 value={table2[rowIndex].power_lead}
                     onConfirm={(value) => {
@@ -258,10 +258,10 @@ const EditConstraints: React.FC<constraintProp> = ({ isNewProj }) => {
                       setconstraintData(newData);
                     }}
                   />
-                )} 
-              />   
-              <Column 
-                name="signal_lead" 
+                )}
+              />
+              <Column
+                name="signal_lead"
                 cellRenderer={(rowIndex) => (
                   <EditableCell2 value={table2[rowIndex].signal_lead}
                     onConfirm={(value) => {
@@ -270,10 +270,10 @@ const EditConstraints: React.FC<constraintProp> = ({ isNewProj }) => {
                       setconstraintData(newData);
                     }}
                   />
-                )} 
-              /> 
-              <Column 
-                name="MOS" 
+                )}
+              />
+              <Column
+                name="MOS"
                 cellRenderer={(rowIndex) => (
                   <EditableCell2 value={table2[rowIndex].MOS}
                     onConfirm={(value) => {
@@ -282,10 +282,10 @@ const EditConstraints: React.FC<constraintProp> = ({ isNewProj }) => {
                       setconstraintData(newData);
                     }}
                   />
-                )} 
-              /> 
-              <Column 
-                name="cap" 
+                )}
+              />
+              <Column
+                name="cap"
                 cellRenderer={(rowIndex) => (
                   <EditableCell2 value={table2[rowIndex].cap}
                     onConfirm={(value) => {
@@ -294,8 +294,8 @@ const EditConstraints: React.FC<constraintProp> = ({ isNewProj }) => {
                       setconstraintData(newData);
                     }}
                   />
-                )} 
-              /> 
+                )}
+              />
           </Table2>
           </div>
         </TabPanel>
@@ -306,8 +306,8 @@ const EditConstraints: React.FC<constraintProp> = ({ isNewProj }) => {
         <TabPanel>
           <div className="table-box">
             <Table2 numRows={table3.length} enableRowHeader={true} >
-              <Column 
-                name="EMPTY" 
+              <Column
+                name="EMPTY"
                 cellRenderer={(rowIndex) => (
                   <EditableCell2 value={table3[rowIndex].EMPTY.toString()}
                     onConfirm={(value) => {
@@ -316,10 +316,10 @@ const EditConstraints: React.FC<constraintProp> = ({ isNewProj }) => {
                       setconstraintData(newData);
                     }}
                   />
-                )} 
+                )}
               />
-              <Column 
-                name="power_trace" 
+              <Column
+                name="power_trace"
                 cellRenderer={(rowIndex) => (
                   <EditableCell2 value={table3[rowIndex].power_trace.toString()}
                     onConfirm={(value) => {
@@ -328,10 +328,10 @@ const EditConstraints: React.FC<constraintProp> = ({ isNewProj }) => {
                       setconstraintData(newData);
                     }}
                   />
-                )} 
+                )}
               />
-              <Column 
-                name="signal_trace" 
+              <Column
+                name="signal_trace"
                 cellRenderer={(rowIndex) => (
                   <EditableCell2 value={table3[rowIndex].signal_trace}
                     onConfirm={(value) => {
@@ -340,10 +340,10 @@ const EditConstraints: React.FC<constraintProp> = ({ isNewProj }) => {
                       setconstraintData(newData);
                     }}
                   />
-                )} 
-              />                
-              <Column 
-                name="bonding wire pad" 
+                )}
+              />
+              <Column
+                name="bonding wire pad"
                 cellRenderer={(rowIndex) => (
                   <EditableCell2 value={table3[rowIndex]["bonding wire pad"]}
                     onConfirm={(value) => {
@@ -352,10 +352,10 @@ const EditConstraints: React.FC<constraintProp> = ({ isNewProj }) => {
                       setconstraintData(newData);
                     }}
                   />
-                )} 
-              />                
-              <Column 
-                name="power_lead" 
+                )}
+              />
+              <Column
+                name="power_lead"
                 cellRenderer={(rowIndex) => (
                   <EditableCell2 value={table3[rowIndex].power_lead}
                     onConfirm={(value) => {
@@ -364,10 +364,10 @@ const EditConstraints: React.FC<constraintProp> = ({ isNewProj }) => {
                       setconstraintData(newData);
                     }}
                   />
-                )} 
-              />   
-              <Column 
-                name="signal_lead" 
+                )}
+              />
+              <Column
+                name="signal_lead"
                 cellRenderer={(rowIndex) => (
                   <EditableCell2 value={table3[rowIndex].signal_lead}
                     onConfirm={(value) => {
@@ -376,10 +376,10 @@ const EditConstraints: React.FC<constraintProp> = ({ isNewProj }) => {
                       setconstraintData(newData);
                     }}
                   />
-                )} 
-              /> 
-              <Column 
-                name="MOS" 
+                )}
+              />
+              <Column
+                name="MOS"
                 cellRenderer={(rowIndex) => (
                   <EditableCell2 value={table3[rowIndex].MOS}
                     onConfirm={(value) => {
@@ -388,10 +388,10 @@ const EditConstraints: React.FC<constraintProp> = ({ isNewProj }) => {
                       setconstraintData(newData);
                     }}
                   />
-                )} 
-              /> 
-              <Column 
-                name="cap" 
+                )}
+              />
+              <Column
+                name="cap"
                 cellRenderer={(rowIndex) => (
                   <EditableCell2 value={table3[rowIndex].cap}
                     onConfirm={(value) => {
@@ -400,8 +400,8 @@ const EditConstraints: React.FC<constraintProp> = ({ isNewProj }) => {
                       setconstraintData(newData);
                     }}
                   />
-                )} 
-              /> 
+                )}
+              />
             </Table2>
           </div>
         </TabPanel>
@@ -412,8 +412,8 @@ const EditConstraints: React.FC<constraintProp> = ({ isNewProj }) => {
         <TabPanel>
           <div className="table-box">
             <Table2 numRows={table4.length} enableRowHeader={true} >
-              <Column 
-                name="EMPTY" 
+              <Column
+                name="EMPTY"
                 cellRenderer={(rowIndex) => (
                   <EditableCell2 value={table4[rowIndex].EMPTY.toString()}
                     onConfirm={(value) => {
@@ -422,10 +422,10 @@ const EditConstraints: React.FC<constraintProp> = ({ isNewProj }) => {
                       setconstraintData(newData);
                     }}
                   />
-                )} 
+                )}
               />
-              <Column 
-                name="power_trace" 
+              <Column
+                name="power_trace"
                 cellRenderer={(rowIndex) => (
                   <EditableCell2 value={table4[rowIndex].power_trace.toString()}
                     onConfirm={(value) => {
@@ -434,10 +434,10 @@ const EditConstraints: React.FC<constraintProp> = ({ isNewProj }) => {
                       setconstraintData(newData);
                     }}
                   />
-                )} 
+                )}
               />
-              <Column 
-                name="signal_trace" 
+              <Column
+                name="signal_trace"
                 cellRenderer={(rowIndex) => (
                   <EditableCell2 value={table4[rowIndex].signal_trace}
                     onConfirm={(value) => {
@@ -446,10 +446,10 @@ const EditConstraints: React.FC<constraintProp> = ({ isNewProj }) => {
                       setconstraintData(newData);
                     }}
                   />
-                )} 
-              />                
-              <Column 
-                name="bonding wire pad" 
+                )}
+              />
+              <Column
+                name="bonding wire pad"
                 cellRenderer={(rowIndex) => (
                   <EditableCell2 value={table4[rowIndex]["bonding wire pad"]}
                     onConfirm={(value) => {
@@ -458,10 +458,10 @@ const EditConstraints: React.FC<constraintProp> = ({ isNewProj }) => {
                       setconstraintData(newData);
                     }}
                   />
-                )} 
-              />                
-              <Column 
-                name="power_lead" 
+                )}
+              />
+              <Column
+                name="power_lead"
                 cellRenderer={(rowIndex) => (
                   <EditableCell2 value={table4[rowIndex].power_lead}
                     onConfirm={(value) => {
@@ -470,10 +470,10 @@ const EditConstraints: React.FC<constraintProp> = ({ isNewProj }) => {
                       setconstraintData(newData);
                     }}
                   />
-                )} 
-              />   
-              <Column 
-                name="signal_lead" 
+                )}
+              />
+              <Column
+                name="signal_lead"
                 cellRenderer={(rowIndex) => (
                   <EditableCell2 value={table4[rowIndex].signal_lead}
                     onConfirm={(value) => {
@@ -482,10 +482,10 @@ const EditConstraints: React.FC<constraintProp> = ({ isNewProj }) => {
                       setconstraintData(newData);
                     }}
                   />
-                )} 
-              /> 
-              <Column 
-                name="MOS" 
+                )}
+              />
+              <Column
+                name="MOS"
                 cellRenderer={(rowIndex) => (
                   <EditableCell2 value={table4[rowIndex].MOS}
                     onConfirm={(value) => {
@@ -494,10 +494,10 @@ const EditConstraints: React.FC<constraintProp> = ({ isNewProj }) => {
                       setconstraintData(newData);
                     }}
                   />
-                )} 
-              /> 
-              <Column 
-                name="cap" 
+                )}
+              />
+              <Column
+                name="cap"
                 cellRenderer={(rowIndex) => (
                   <EditableCell2 value={table4[rowIndex].cap}
                     onConfirm={(value) => {
@@ -506,8 +506,8 @@ const EditConstraints: React.FC<constraintProp> = ({ isNewProj }) => {
                       setconstraintData(newData);
                     }}
                   />
-                )} 
-              /> 
+                )}
+              />
             </Table2>
           </div>
         </TabPanel>
@@ -518,8 +518,8 @@ const EditConstraints: React.FC<constraintProp> = ({ isNewProj }) => {
         <TabPanel>
           <div className="table-box">
             <Table2 numRows={table5.length} enableRowHeader={true} >
-              <Column 
-                name="EMPTY" 
+              <Column
+                name="EMPTY"
                 cellRenderer={(rowIndex) => (
                   <EditableCell2 value={table5[rowIndex].EMPTY.toString()}
                     onConfirm={(value) => {
@@ -528,10 +528,10 @@ const EditConstraints: React.FC<constraintProp> = ({ isNewProj }) => {
                       setconstraintData(newData);
                     }}
                   />
-                )} 
+                )}
               />
-              <Column 
-                name="power_trace" 
+              <Column
+                name="power_trace"
                 cellRenderer={(rowIndex) => (
                   <EditableCell2 value={table5[rowIndex].power_trace.toString()}
                     onConfirm={(value) => {
@@ -540,10 +540,10 @@ const EditConstraints: React.FC<constraintProp> = ({ isNewProj }) => {
                       setconstraintData(newData);
                     }}
                   />
-                )} 
+                )}
               />
-              <Column 
-                name="signal_trace" 
+              <Column
+                name="signal_trace"
                 cellRenderer={(rowIndex) => (
                   <EditableCell2 value={table5[rowIndex].signal_trace}
                     onConfirm={(value) => {
@@ -552,10 +552,10 @@ const EditConstraints: React.FC<constraintProp> = ({ isNewProj }) => {
                       setconstraintData(newData);
                     }}
                   />
-                )} 
-              />                
-              <Column 
-                name="bonding wire pad" 
+                )}
+              />
+              <Column
+                name="bonding wire pad"
                 cellRenderer={(rowIndex) => (
                   <EditableCell2 value={table5[rowIndex]["bonding wire pad"]}
                     onConfirm={(value) => {
@@ -564,10 +564,10 @@ const EditConstraints: React.FC<constraintProp> = ({ isNewProj }) => {
                       setconstraintData(newData);
                     }}
                   />
-                )} 
-              />                
-              <Column 
-                name="power_lead" 
+                )}
+              />
+              <Column
+                name="power_lead"
                 cellRenderer={(rowIndex) => (
                   <EditableCell2 value={table5[rowIndex].power_lead}
                     onConfirm={(value) => {
@@ -576,10 +576,10 @@ const EditConstraints: React.FC<constraintProp> = ({ isNewProj }) => {
                       setconstraintData(newData);
                     }}
                   />
-                )} 
-              />   
-              <Column 
-                name="signal_lead" 
+                )}
+              />
+              <Column
+                name="signal_lead"
                 cellRenderer={(rowIndex) => (
                   <EditableCell2 value={table5[rowIndex].signal_lead}
                     onConfirm={(value) => {
@@ -588,10 +588,10 @@ const EditConstraints: React.FC<constraintProp> = ({ isNewProj }) => {
                       setconstraintData(newData);
                     }}
                   />
-                )} 
-              /> 
-              <Column 
-                name="MOS" 
+                )}
+              />
+              <Column
+                name="MOS"
                 cellRenderer={(rowIndex) => (
                   <EditableCell2 value={table5[rowIndex].MOS}
                     onConfirm={(value) => {
@@ -600,10 +600,10 @@ const EditConstraints: React.FC<constraintProp> = ({ isNewProj }) => {
                       setconstraintData(newData);
                     }}
                   />
-                )} 
-              /> 
-              <Column 
-                name="cap" 
+                )}
+              />
+              <Column
+                name="cap"
                 cellRenderer={(rowIndex) => (
                   <EditableCell2 value={table5[rowIndex].cap}
                     onConfirm={(value) => {
@@ -612,13 +612,13 @@ const EditConstraints: React.FC<constraintProp> = ({ isNewProj }) => {
                       setconstraintData(newData);
                     }}
                   />
-                )} 
-              /> 
+                )}
+              />
             </Table2>
           </div>
         </TabPanel>
       ) : null }
-        
+
       </Tabs>
 
       {/* Launches popup to set Optimization Constraints before before running project */}

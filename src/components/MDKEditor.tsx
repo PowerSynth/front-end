@@ -35,9 +35,9 @@ const MDKEditor: React.FC = () => {
     console.log(mdkCSV);
   }
 
- 
+
   const [MDKData, setMDKData] = useState<MDKDataFace[]>([]);
-    
+
   const [csvError, setCsvError] = useState<string | null>(null);
 
   // for now it handles uploaded materials file and then parses into json object then saved to MDKData
@@ -225,7 +225,7 @@ const MDKEditor: React.FC = () => {
                 const newData=[...MDKData];
                 newData[rowIndex].thermal_expansion_coeffcient = value;
                 setMDKData(newData);
-                
+
               }}
             />
           )}
