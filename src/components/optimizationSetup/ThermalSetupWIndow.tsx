@@ -52,7 +52,7 @@ const ThermalSetupWindow: React.FC = () => {
                         <ThermalSetupTableElement key={1} index={1}/>
                         <ThermalSetupTableElement key={2} index={2}/>
                         <ThermalSetupTableElement key={3} index={3}/>
-                        
+
                         {/*
                         These three elements are here for example.
                         In the actual project, they should be added from the 'Add Device' button.
