@@ -1,0 +1,57 @@
+[
+  {
+    "ID": 1,
+    "Name": "Baseplate",
+    "Origin": "0,0",
+    "Width": 50,
+    "Length": 60,
+    "Thickness": 5,
+    "Material": "copper",
+    "Type": "p",
+    "Electrical": "F"
+  },
+  {
+    "ID": 2,
+    "Name": "Bottom_Metal",
+    "Origin": "0,0",
+    "Width": 40,
+    "Length": 50,
+    "Thickness": 0.2,
+    "Material": "copper",
+    "Type": "p",
+    "Electrical": "G"
+  },
+  {
+    "ID": 3,
+    "Name": "Ceramic1",
+    "Origin": "0,0",
+    "Width": 40,
+    "Length": 50,
+    "Thickness": 0.64,
+    "Material": "Al_N",
+    "Type": "p",
+    "Electrical": "D"
+  },
+  {
+    "ID": 4,
+    "Name": "I1",
+    "Origin": "0,0",
+    "Width": 40,
+    "Length": 50,
+    "Thickness": 0.2,
+    "Material": "copper",
+    "Type": "p",
+    "Electrical": "S"
+  },
+  {
+    "ID": 5,
+    "Name": "C1",
+    "Origin": "",
+    "Width": 40,
+    "Length": 50,
+    "Thickness": 0.18,
+    "Material": "SiC",
+    "Type": "a",
+    "Electrical": "C"
+  }
+]
