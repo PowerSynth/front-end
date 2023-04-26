@@ -38,10 +38,6 @@ const InitialStructureAndLayout: React.FC = () => {
                     </div>
                 </div>
             </div>
-            <div className="row">
-                <div></div>
-                <button>Create Layout</button>
-            </div>
         </div>
     );
 };
