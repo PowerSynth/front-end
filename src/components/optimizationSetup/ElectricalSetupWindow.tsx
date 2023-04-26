@@ -43,7 +43,6 @@ const ElectricalSetupWindow: React.FC = () => {
 
     return (
         <div className="mainDiv">
-            <div className="electricalSetupText">Electrical Setup</div>
             <div className="modelSelectDiv">
                 <div>Model Type:</div>
                 <div className="bp4-html-select bp4-fill">
@@ -89,10 +88,10 @@ const ElectricalSetupWindow: React.FC = () => {
 
                 <div className="midButtonsDiv">
                     <div>
-                    <Button small className="midButtons" onClick={handleAddDevice}>Add Device</Button>
+                    <Button small fill onClick={handleAddDevice}>Add Device</Button>
                     </div>
                     <div>
-                    <Button small className="midButtons" onClick={handleRemoveDevice}>Remove Device</Button>
+                    <Button small fill onClick={handleRemoveDevice}>Remove Device</Button>
                     </div>
                 </div>
             </div>

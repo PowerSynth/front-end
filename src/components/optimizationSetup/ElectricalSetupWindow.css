@@ -1,12 +1,11 @@
 
 .mainDiv{
     background-color: white;
-    width: 32rem;
+    /*width: 32rem;*/
+    width: 100%;
+    height: 100%;
     padding: 0.5em;
-}
-.electricalSetupText{
-    font-weight: bold;
-    margin-bottom: 1em;
+    overflow-y: scroll;
 }
 .modelSelectDiv{
     display: flex;
@@ -44,7 +43,6 @@
 }
 .tableDiv{
     width: 60%;
-    height: 18rem;
     display:flex;
     flex-direction: column;
     border-style:solid;
