@@ -16,6 +16,7 @@ const App: React.FC = () => {
         <Route path="/initial-structure-and-layout" element={<InitialStructureAndLayout />} />
         <Route path="/edit-constraints" element={<EditConstraints isNewProj={1} />} /> {/* isNewProj, if = 1 --> new project, else --> Run project */}
         <Route path="/edit-layer-stack" element={<EditLayerStack />} />
+        <Route path="/mdk-editor" element={<MDKEditor />} />
       </Routes>
     </div>
   );

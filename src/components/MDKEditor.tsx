@@ -33,6 +33,7 @@ const MDKEditor: React.FC = () => {
     console.log("Continue");
     const mdkCSV = Papa.unparse(MDKData);
     console.log(mdkCSV);
+    window.open("/edit-layer-stack", '_self')
   }
 
 

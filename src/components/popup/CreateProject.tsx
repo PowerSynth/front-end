@@ -17,6 +17,7 @@ const CreateProject: React.FC<{popupIsOpen: any, closePopup: any}> = ({popupIsOp
 	const handleEditMaterials = () => {
 		console.log("Edit Materials Pressed");
         //go to MDKEditor page
+        window.open("/mdk-editor", '_self')
 	};
 
     //Handle user clicking 'Defualt Materials' button, should route to initial structure and layout
