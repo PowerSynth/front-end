@@ -31,7 +31,7 @@ const LayoutVisualization: React.FC<{}> = () => {
         </div>
 
 
-   
+
 	);
 };
 
