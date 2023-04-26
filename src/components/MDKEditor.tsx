@@ -236,12 +236,6 @@ const MDKEditor: React.FC = () => {
       </div>
 
       {/* buttons located under the MDK table and at bottom right */}
-      <div className= "edit-buttons">
-        <Button >Add</Button>
-        <Button >Clone</Button>
-        <Button >Edit</Button>
-        <Button >Remove</Button>
-      </div>
       <div className= "bottom-buttons">
         <Button onClick={handleMDKLoad}>Load</Button>
         <Button onClick={handleMDKContinue}>Continue</Button>
