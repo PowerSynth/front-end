@@ -27,7 +27,6 @@ const ThermalSetupWindow: React.FC = () => {
 
     return (
         <div className="mainDiv">
-            <div className="thermalSetupText">Thermal Setup</div>
             <div className="modelSelectDiv">
                 <div>Model Select:</div>
                 <div className="bp4-html-select bp4-fill">
@@ -53,6 +52,7 @@ const ThermalSetupWindow: React.FC = () => {
                         <ThermalSetupTableElement key={1} index={1}/>
                         <ThermalSetupTableElement key={2} index={2}/>
                         <ThermalSetupTableElement key={3} index={3}/>
+                        
                         {/*
                         These three elements are here for example.
                         In the actual project, they should be added from the 'Add Device' button.
@@ -62,10 +62,10 @@ const ThermalSetupWindow: React.FC = () => {
 
                 <div className="midButtonsDiv">
                     <div>
-                    <Button small className="midButtons" onClick={handleAddDevice}>Add Device</Button>
+                    <Button small fill className="midButtons" onClick={handleAddDevice}>Add Device</Button>
                     </div>
                     <div>
-                    <Button small className="midButtons">Remove Device</Button>
+                    <Button small fill className="midButtons" onClick={handleRemoveDevice}>Remove Device</Button>
                     </div>
                 </div>
             </div>
