@@ -6,6 +6,7 @@ import CreateProject from "./popup/CreateProject";
 import '@blueprintjs/core/lib/css/blueprint.css';
 import './popup/popup.css'
 import axios from "axios";
+import PowerSynthLogo from '../images/PowerSynthLogo.png'
 
 
 
@@ -52,6 +53,7 @@ const WelcomePage: React.FC = () => {
 
 	return (
         <div className="welcome-page" id="WelcomePage">
+			<img src={PowerSynthLogo} id="power-synth-logo"></img>
             <h1>Welcome to PowerSynth!</h1>
 			<button onClick={handleOpenManual}>Open Manual</button>
 			<button onClick={handleCreateProject}>Create Project</button>

@@ -1,0 +1,89 @@
+.mainDiv{
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    padding: 0.5em;
+    overflow-y: scroll;
+}
+.thermalSetupText{
+    font-weight: bold;
+    margin-bottom: 1em;
+}
+.modelSelectDiv{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1em;
+    align-items: center;
+}
+.modelSelectDiv :first-child{
+    width: 100%;
+}
+.textInputBarDiv{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1em;
+    align-items: center;
+}
+.numeric-input{
+    margin-right: 0 !important;
+}
+.numeric-input :first-child{
+    margin-right: 0 !important;
+}
+.textInputBarDiv div{
+    white-space: nowrap;
+    margin-right: 1em;
+}
+.midSectionDiv{
+    display: flex;
+    margin-bottom: 1em;
+}
+.midSectionDiv hr{
+    margin: 0;
+    margin-bottom: 0.1em;
+    color: lightgray;
+}
+.tableDiv{
+    width: 60%;
+    display:flex;
+    flex-direction: column;
+    border-style:solid;
+    border-width:thin;
+    border-color: lightgray;
+    border-radius: 1%;
+}
+.tableHeader{
+    display: flex;
+    align-items: center;
+    padding: 0.2em;
+    background-color: lightgrey;
+
+}
+.tableHeader div{
+    width: 50%;
+    text-align: center;
+}
+.tableContainer{
+    width: 100%;
+    overflow-y: scroll;
+}
+.tableElement{
+    display: flex;
+    align-items: center;
+
+}
+.tableElement :first-child{
+    width: 10%;
+}
+.midButtonsDiv{
+    width: 40%;
+    display: flex;
+    flex-direction: column-reverse;
+
+}
+.midButtonsDiv div{
+    display: flex;
+    justify-content: end;
+    padding-left: 20%;
+    margin-top: 0.5rem;
+}
