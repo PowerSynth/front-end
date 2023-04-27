@@ -45,7 +45,7 @@ const RunProject: React.FC<{popupIsOpen: any, closePopup: any}> = ({popupIsOpen,
 
         //Appending files to the formData
         files.map((f: any) => {formData.append("file", f)});
-        
+
         //Post to backend
         axios.post('http://localhost:8080/api/powersynth', formData, {headers:{"Content-Type": "multipart/form-data"}})
         .then((res: any) =>{
@@ -80,11 +80,11 @@ const RunProject: React.FC<{popupIsOpen: any, closePopup: any}> = ({popupIsOpen,
                                 imageFile = URL.createObjectURL(imageFileObject);
                                 solutionImage.url = imageFile;
                                 //console.log(tempItem)
-                                setImageFiles((images: any) => [...images, solutionImage]);                                
+                                setImageFiles((images: any) => [...images, solutionImage]);
                             });
                         }
-                      }                   
-                }) 
+                      }
+                })
             });
         })
         .catch((err: any) => {
@@ -118,7 +118,7 @@ const RunProject: React.FC<{popupIsOpen: any, closePopup: any}> = ({popupIsOpen,
                     <div style={{width: "100%", height: "100vh", backgroundColor: "lightgray"}}><h1>Loading</h1></div>
                 </Overlay>
             }
-            {solutionsReceived &&   
+            {solutionsReceived &&
                 <SolutionsBrowser resultImage={imageFiles}/>
             }
         </div>
