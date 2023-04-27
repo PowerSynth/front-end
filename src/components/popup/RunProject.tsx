@@ -74,7 +74,7 @@ const RunProject: React.FC<{popupIsOpen: any, closePopup: any}> = ({popupIsOpen,
                                     blob: blob,
                                     toDownload: false
                                 }
-                                solutionImage.name = key.slice(18, key.length-4); //Extracting just the .png file name
+                                solutionImage.name = key.slice(13, key.length-4); //Extracting just the .png file name
                                 const imageFileObject = new File([blob], zipEntry.name, { type: blob.type });
                                 var imageFile: any;
                                 imageFile = URL.createObjectURL(imageFileObject);
