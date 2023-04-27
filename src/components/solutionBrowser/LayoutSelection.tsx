@@ -13,6 +13,8 @@ const LayoutSelection: React.FC<{imageFiles: any}> = ({imageFiles}) => {
     const [itemsToDownload, setItemsToDownload] = useState<{ name: any }[]>([]);
 
 
+
+
     //Handle user opening exit popup
 	const handleExit = () => {
         setIsExitPopupOpen(true)

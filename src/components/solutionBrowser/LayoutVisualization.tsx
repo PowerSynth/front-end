@@ -8,12 +8,8 @@ import {Button, Tabs, Tab, } from "@blueprintjs/core";
 
 const LayoutVisualization: React.FC<{imageFiles: any}> = ({imageFiles}) => {
 
-
-    // var imageURLs: Array<String> = [];
-
-    // resultImage.map((i: any) => {
-    //     imageURLs.push(i);
-    // })
+    
+    //if (imageFiles.name != ""){
 
 	return (
         <div className="solutions-browser-item">
