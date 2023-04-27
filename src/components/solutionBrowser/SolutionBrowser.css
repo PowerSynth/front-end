@@ -116,6 +116,8 @@
     margin-top: 20px;
     border: 1px solid gray;
     background-color: white;
+    display: flex;
+    justify-content: center;
 }
 
 .solution-data {
@@ -164,4 +166,35 @@
 
 .layout-buttons .bp4-button:hover {
     background-color:#333;
+}
+
+.selection-list {
+    width: 80%;
+    height: 50%;
+    background-color: none;
+    list-style-position: inside;
+    margin-top: 40px;
+}
+
+.selection-list-item {
+    width: 100%;
+    background-color: #28aa014d;
+    list-style-type: none;
+    margin-left: -1em;
+    transition: background-color 0.4s;
+    box-shadow: 0px 8px 24px rgba(149, 157, 165, 0.5);
+    border-radius: 5px;
+    display: grid;
+    grid-template-columns: 90% 10% ;
+    margin-bottom: 20px;
+}
+
+.selection-list-item-elements {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.selection-list-item-elements .bp4-control-input:checked ~ .bp4-control-indicator {
+    background-color: pink;
 }

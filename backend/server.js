@@ -46,11 +46,7 @@ app.post("/api/powersynth", (req, res) => {
     .json({ result: true, msg: "Running PowerSynth", results: req.files });
 });
 
-app.get("/download", (req, res) => {
-  res.download(
-    "../src/components/solutionBrowser/testImages/initial_layout_l1.png"
-  );
-});
+
 
 // Running file on port 8080
 app.listen(8080, () => {

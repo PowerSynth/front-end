@@ -17,11 +17,7 @@ const FileUpload: React.FC<{files: any, setFiles: any}> = ({files, setFiles}) =>
         } else{
             console.log('empty');
         }
-
-        // file.isUploading = true;
-        setFiles([...files, file])
-        console.log(file)
-
+        
         file.isUploading = false;
         setFiles([...files, file])
 
@@ -34,7 +30,7 @@ const FileUpload: React.FC<{files: any, setFiles: any}> = ({files, setFiles}) =>
                     Upload
                 </button>
             </div>
-            <p className="main">Upload macro_script.txt file</p>
+            <p className="main">Upload .zip file</p>
         </div>
     )
 };

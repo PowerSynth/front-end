@@ -12,12 +12,21 @@ import {  Overlay, Classes, Button, Card } from "@blueprintjs/core";
 import axios from "axios";
 import JSZip from "jszip";
 
+interface solutionImageData {
+    name: string;
+    url: string;
+    blob: Blob;
+    toDownload: boolean;
+}
+
 
 const RunProject: React.FC<{popupIsOpen: any, closePopup: any}> = ({popupIsOpen, closePopup}) => {
 
-    const [files, setFiles] = useState<{ name: string }[]>([]);
+    const [files, setFiles] = useState<{ name: any }[]>([]);
     const [isLoading, setIsLoading] = useState(false);
     const [solutionsReceived, setSolutionsReceived] = useState(false);
+    const [imageFiles, setImageFiles] = useState<{ name: any }[]>([]);
+
 
     //Remove file function
     const removeFile = (filename: any) => {
@@ -36,7 +45,7 @@ const RunProject: React.FC<{popupIsOpen: any, closePopup: any}> = ({popupIsOpen,
 
         //Appending files to the formData
         files.map((f: any) => {formData.append("file", f)});
-
+        
         //Post to backend
         axios.post('http://localhost:8080/api/powersynth', formData, {headers:{"Content-Type": "multipart/form-data"}})
         .then((res: any) =>{
@@ -45,22 +54,38 @@ const RunProject: React.FC<{popupIsOpen: any, closePopup: any}> = ({popupIsOpen,
             setIsLoading(false);
             setSolutionsReceived(true);
 
-            // Unzipping file - currently doesn't work because the returned file from the response is not the correct format
-            // commented out to prevent error
-            // In meantime, result images are being pulled from a temp folder in solutions browser
-            // Once this is fixed, the unzipped contents should be passed as props in solution browser component at bottom
-
-            //Unzip
-            // const zip = new JSZip();
-            // var fileToUnzip = res.data.results.file
-            // var unzip = zip.loadAsync(fileToUnzip);
-            // var solutionFiles: any;
-            // unzip.then((contents: any) => {
-            //     solutionFiles = contents.files;
-            // })
-
-
-
+            // Unzipping file -- once actual post method is used, the files.map function will not be needed
+            // Instead, it will sart with zip.loadAsync(resultZipFile of response)
+            files.map((f: any) => {
+                const zip = new JSZip();
+                var unzip = zip.loadAsync(f);
+                var solutionFiles: any;
+                unzip.then((contents: any) => {
+                    solutionFiles = contents.files
+                    //Looping through solutions folder and only getting the .png files
+                    for (const [key, value] of Object.entries(solutionFiles)) {
+                        if ((key.includes(".png")) && (!key.includes("MACOSX"))){
+                            //console.log(`${key}: ${value}`);
+                            const zipEntry = solutionFiles[key];
+                            zipEntry.async("blob").then((blob: Blob) => {
+                                const solutionImage: solutionImageData = {
+                                    name: "",
+                                    url: "",
+                                    blob: blob,
+                                    toDownload: false
+                                }
+                                solutionImage.name = key.slice(18, key.length-4); //Extracting just the .png file name
+                                const imageFileObject = new File([blob], zipEntry.name, { type: blob.type });
+                                var imageFile: any;
+                                imageFile = URL.createObjectURL(imageFileObject);
+                                solutionImage.url = imageFile;
+                                //console.log(tempItem)
+                                setImageFiles((images: any) => [...images, solutionImage]);                                
+                            });
+                        }
+                      }                   
+                }) 
+            });
         })
         .catch((err: any) => {
             console.log(err)
@@ -93,8 +118,8 @@ const RunProject: React.FC<{popupIsOpen: any, closePopup: any}> = ({popupIsOpen,
                     <div style={{width: "100%", height: "100vh", backgroundColor: "lightgray"}}><h1>Loading</h1></div>
                 </Overlay>
             }
-            {solutionsReceived &&
-                <SolutionsBrowser />
+            {solutionsReceived &&   
+                <SolutionsBrowser resultImage={imageFiles}/>
             }
         </div>
     )

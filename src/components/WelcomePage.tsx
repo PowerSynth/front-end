@@ -13,6 +13,7 @@ const WelcomePage: React.FC = () => {
 	const [isRunProjectPopupOpen, setIsRunProjectPopupOpen] = useState(false)
 	const [isCreateProjectPopupOpen, setIsCreateProjectPopupOpen] = useState(false)
 
+
 	//Handle user clicking 'Open Manual' button
 	const handleOpenManual = () => {
 
@@ -63,7 +64,7 @@ const WelcomePage: React.FC = () => {
 			}
 			{/* Run Project Button Pressed */}
 			{isRunProjectPopupOpen &&
-				<RunProject popupIsOpen={isRunProjectPopupOpen} closePopup={closePopupButton} />
+				<RunProject popupIsOpen={isRunProjectPopupOpen} closePopup={closePopupButton}/>
 			}
 		</div>
 	);
