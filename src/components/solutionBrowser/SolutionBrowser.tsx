@@ -9,7 +9,7 @@ import LayoutSelection from "./LayoutSelection";
 
 const SolutionsBrowser: React.FC<{resultImage: any}> = ({resultImage}) => {
 
-    
+
 	return (
         <Overlay className={Classes.OVERLAY_SCROLL_CONTAINER} isOpen={true}>
             <div className="solutions-browser">

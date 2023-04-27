@@ -46,8 +46,6 @@ app.post("/api/powersynth", (req, res) => {
     .json({ result: true, msg: "Running PowerSynth", results: req.files });
 });
 
-
-
 // Running file on port 8080
 app.listen(8080, () => {
   console.log("Server running on port 8080");

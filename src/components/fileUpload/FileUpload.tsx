@@ -17,7 +17,7 @@ const FileUpload: React.FC<{files: any, setFiles: any}> = ({files, setFiles}) =>
         } else{
             console.log('empty');
         }
-        
+
         file.isUploading = false;
         setFiles([...files, file])
 
