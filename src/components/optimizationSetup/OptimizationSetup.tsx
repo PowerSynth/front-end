@@ -9,6 +9,7 @@ import OptimizationBody from "./OptionBody";
 import './OptimizationSetup.css'
 import '@blueprintjs/core/lib/css/blueprint.css';
 import '../popup/popup.css'
+import ThermalSetupWindow from "./ThermalSetupWIndow";
 
 const OptimizationSetupPopup: React.FC<{isPopupOpen: boolean}> = ({isPopupOpen}) => {
     const [isOptionOneOpen, setIsOptionOneOpen] = useState(false)
@@ -129,9 +130,7 @@ const OptimizationSetupPopup: React.FC<{isPopupOpen: boolean}> = ({isPopupOpen})
                             <p>Thermal Setup</p>
                         </div>
                         <div className="popup-content">
-                            <p className="popup-container-text">
-                                Thermal Setup component will be routed here
-                            </p>
+                                <ThermalSetupWindow />
                         </div>
                         <div className="buttons-container">
                             <Button text="Continue" onClick={handleThermalSetupButton}/>

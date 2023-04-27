@@ -6,9 +6,10 @@ import EditConstraints from './components/EditConstraints';
 import MDKEditor from './components/MDKEditor';
 import EditLayerStack from './components/EditLayerStack';
 import InitialStructureAndLayout from './components/InitialStructureAndLayout';
+import ThermalSetupWindow from './components/optimizationSetup/ThermalSetupWIndow';
 import { Route, Routes } from 'react-router-dom'
 
-const App: React.FC = () => {
+const App: React.FC = () => { //Replaced WelcomePage with ThermalSetupWindow for testing purposes. Leaving this here in case I forget to change it back...
   return (
     <div>
       <Routes>
