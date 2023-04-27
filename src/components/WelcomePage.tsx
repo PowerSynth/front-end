@@ -17,7 +17,7 @@ const WelcomePage: React.FC = () => {
 	const handleOpenManual = () => {
 
 		// Manual V1.9 from E3DA website
-		window.open('https://e3da.csce.uark.edu/release/PowerSynth/manual/PowerSynth_v1.9.pdf', '_blank');
+		window.open('https://e3da.csce.uark.edu/release/PowerSynth/manual/PowerSynth_v2.0.pdf', '_blank');
 	};
 
 	//Handle user clicking 'Create Project' button
