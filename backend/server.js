@@ -28,9 +28,8 @@ app.post("/api/powersynth", (req, res) => {
   // Handle no files uploaded
   if (uploadFiles == {}) {
     console.log("you didn't upload the macro script!");
-    return res
-      .status(200)
-      .json({ result: true, msg: "You didn't upload macro script!" });
+    return res.status(200).json(
+        {result : true, msg : "You didn't upload macro script!"});
   }
   // Create file(s) in folder, currently commented out so it doesn't create
   // files every time during testing
@@ -41,14 +40,9 @@ app.post("/api/powersynth", (req, res) => {
   for (var key in uploadFiles) {
     delete uploadFiles[key];
   }
-  return res
-    .status(200)
-    .json({ result: true, msg: "Running PowerSynth", results: req.files });
+  return res.status(200).json(
+      {result : true, msg : "Running PowerSynth", results : req.files});
 });
-
-
 
 // Running file on port 8080
-app.listen(8080, () => {
-  console.log("Server running on port 8080");
-});
+app.listen(8080, () => { console.log("Server running on port 8080"); });
