@@ -65,7 +65,7 @@ const LayoutSelection: React.FC<{imageFiles: any}> = ({imageFiles}) => {
                 <div className="solution-space">
                     <ul className="selection-list">
                         {imageFiles&&
-                            imageFiles.map((i: any) => 
+                            imageFiles.map((i: any) =>
                                 <li className={"selection-list-item"} key={i.name}>
                                     <div className="selection-list-item-elements">{i.name}</div>
                                     <div className="selection-list-item-elements"><Checkbox className={"checkbox"} onChange={()=>handleChecked(i)}/></div>

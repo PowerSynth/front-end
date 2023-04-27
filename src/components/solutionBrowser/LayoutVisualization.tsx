@@ -27,14 +27,14 @@ const LayoutVisualization: React.FC<{imageFiles: any}> = ({imageFiles}) => {
                 <div className="visualization-body">
                     <Tabs animate={true}  vertical={false}>
                         {imageFiles&&
-                            imageFiles.map((i: any) => 
+                            imageFiles.map((i: any) =>
                             <Tab id={i.name} key={i.name} title={i.name}  panel={
                                 <div className="tab-content">
                                     <img src={i.url} style={{width: "70%"}}></img>
                                 </div>
                             } />
                             )
-                        }                        
+                        }
                     </Tabs>
                 </div>
             </div>
