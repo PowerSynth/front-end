@@ -11,6 +11,14 @@ import './OptimizationSetup.css'
 import '@blueprintjs/core/lib/css/blueprint.css';
 import '../popup/popup.css'
 import ThermalSetupWindow from "./ThermalSetupWIndow";
+import SolutionsBrowser from "../solutionBrowser/SolutionBrowser";
+
+interface solutionImageData {
+    name: string;
+    url: string;
+    blob: Blob;
+    toDownload: boolean;
+}
 
 const OptimizationSetupPopup: React.FC<{isPopupOpen: boolean}> = ({isPopupOpen}) => {
     const [isOptionOneOpen, setIsOptionOneOpen] = useState(false)
@@ -20,6 +28,8 @@ const OptimizationSetupPopup: React.FC<{isPopupOpen: boolean}> = ({isPopupOpen})
     const [isThermalSetupOpen, setIsThermalSetupOpen] = useState(false)
     const [optionOneWasOpen, setOptionOneWasOpen] = useState(false)
     const [optionThreeWasOpen, setOptionThreeWasOpen] = useState(false)
+    const [isSolutionBroswerOpen, setIsSolutionBrowserOpen] = useState(false)
+    const [imageFiles, setImageFiles] = useState<{ name: any }[]>([]);
 
     const handleOptionOne = () => {
         setIsOptionOneOpen(wasOptionsOneOpen => !wasOptionsOneOpen)
@@ -76,7 +86,19 @@ const OptimizationSetupPopup: React.FC<{isPopupOpen: boolean}> = ({isPopupOpen})
     //Currently just routing to home page
     const handleRunPowerSynth = () => {
         console.log('Running PowerSynth!')
-        window.open("/", '_self');
+        //window.open("/", '_self');
+        setIsOptionOneOpen(false);
+        setIsOptionTwoOpen(false);
+        setIsOptionThreeOpen(false);
+        const solutionImage: solutionImageData = {
+            name: "",
+            url: "",
+            blob: new Blob(),
+            toDownload: false
+        }
+        setImageFiles((images: any) => [...images, solutionImage]);
+        setIsSolutionBrowserOpen(true);
+
     }
 
     return (
@@ -107,6 +129,10 @@ const OptimizationSetupPopup: React.FC<{isPopupOpen: boolean}> = ({isPopupOpen})
                             <Button text="Run PowerSynth" className="buttons-full" onClick={handleRunPowerSynth}/>
                         </div>
                     </Card>
+
+                }
+                {isSolutionBroswerOpen &&
+                    <SolutionsBrowser resultImage={imageFiles}/>
 
                 }
                 {/* Section for the Popups for Electrical setup and Thermal Setup, need to be implented */}

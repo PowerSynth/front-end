@@ -6,6 +6,7 @@ import EditConstraints from './components/EditConstraints';
 import MDKEditor from './components/MDKEditor';
 import EditLayerStack from './components/EditLayerStack';
 import InitialStructureAndLayout from './components/InitialStructureAndLayout';
+import SolutionsBrowser from './components/solutionBrowser/SolutionBrowser';
 import ElectricalSetupWindow from './components/optimizationSetup/ElectricalSetupWindow';
 import ThermalSetupWindow from './components/optimizationSetup/ThermalSetupWIndow';
 import { Route, Routes } from 'react-router-dom'

@@ -5,6 +5,7 @@ import RunProject from "./popup/RunProject";
 import CreateProject from "./popup/CreateProject";
 import '@blueprintjs/core/lib/css/blueprint.css';
 import './popup/popup.css'
+import axios from "axios";
 import PowerSynthLogo from '../images/PowerSynthLogo.png'
 
 
@@ -12,6 +13,7 @@ import PowerSynthLogo from '../images/PowerSynthLogo.png'
 const WelcomePage: React.FC = () => {
 	const [isRunProjectPopupOpen, setIsRunProjectPopupOpen] = useState(false)
 	const [isCreateProjectPopupOpen, setIsCreateProjectPopupOpen] = useState(false)
+
 
 	//Handle user clicking 'Open Manual' button
 	const handleOpenManual = () => {
@@ -40,7 +42,12 @@ const WelcomePage: React.FC = () => {
 		}
 		if (isRunProjectPopupOpen) {
 			setIsRunProjectPopupOpen(wasRunProjectPopupOpen => !wasRunProjectPopupOpen);
-			console.log('closing run')
+			console.log('closing run');
+
+			axios.post(`http://localhost:8080/delete`, {"name": "**delete-all-files**"}, {headers:{"Content-Type": "application/json"}})
+			.catch((err: any) => {
+				console.log(err)
+			})
 		}
 	}
 
@@ -59,7 +66,7 @@ const WelcomePage: React.FC = () => {
 			}
 			{/* Run Project Button Pressed */}
 			{isRunProjectPopupOpen &&
-				<RunProject popupIsOpen={isRunProjectPopupOpen} closePopup={closePopupButton} />
+				<RunProject popupIsOpen={isRunProjectPopupOpen} closePopup={closePopupButton}/>
 			}
 		</div>
 	);
