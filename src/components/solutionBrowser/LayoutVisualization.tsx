@@ -8,7 +8,7 @@ import {Button, Tabs, Tab, } from "@blueprintjs/core";
 
 const LayoutVisualization: React.FC<{imageFiles: any}> = ({imageFiles}) => {
 
-    
+
     //if (imageFiles.name != ""){
 
 	return (
