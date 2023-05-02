@@ -2,6 +2,7 @@
   "name": "power-synth-web",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://e3da.csce.uark.edu/~cap22/",
   "dependencies": {
     "@blueprintjs/core": "^4.17.8",
     "@blueprintjs/docs-theme": "^4.5.14",

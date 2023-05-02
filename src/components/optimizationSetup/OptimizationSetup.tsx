@@ -82,8 +82,6 @@ const OptimizationSetupPopup: React.FC<{isPopupOpen: boolean}> = ({isPopupOpen})
         }
     }
 
-    //Function to handle clicking 'run powersynth', needs to be implemented; will send data to backend and route to solutions browser
-    //Currently just routing to home page
     const handleRunPowerSynth = () => {
         console.log('Running PowerSynth!')
         //window.open("/", '_self');
