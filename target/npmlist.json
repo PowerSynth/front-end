@@ -1,1 +1,99 @@
-{"version":"0.1.0","name":"power-synth-web","dependencies":{"@blueprintjs/core":{"version":"4.18.0"},"@blueprintjs/docs-theme":{"version":"4.5.16"},"@blueprintjs/select":{"version":"4.9.14"},"@blueprintjs/table":{"version":"4.10.1"},"@testing-library/jest-dom":{"version":"5.16.5"},"@testing-library/react":{"version":"13.4.0"},"@testing-library/user-event":{"version":"13.5.0"},"@types/jest":{"version":"27.5.2"},"@types/node":{"version":"16.18.25"},"@types/react-dom":{"version":"18.2.1"},"@types/react-router-dom":{"version":"5.3.3"},"@types/react":{"version":"18.2.0"},"cors":{"version":"2.8.5"},"decompress":{"version":"4.2.1"},"express-fileupload":{"version":"1.4.0"},"express":{"version":"4.18.2"},"js-file-download":{"version":"0.4.12"},"jszip":{"version":"3.10.1"},"localforage":{"version":"1.10.0"},"match-sorter":{"version":"6.3.1"},"node-releases":{"version":"2.0.10"},"react-axios":{"version":"2.0.6"},"react-dom":{"version":"18.2.0"},"react-papaparse":{"version":"4.1.0"},"react-router-dom":{"version":"6.11.0"},"react-scripts":{"version":"5.0.1"},"react-tabs":{"version":"6.0.1"},"react":{"version":"18.2.0"},"sort-by":{"version":"1.2.0"},"typescript":{"version":"4.9.5"},"web-vitals":{"version":"2.1.4"}}}
+{
+  "version": "0.1.0",
+  "name": "power-synth-web",
+  "dependencies": {
+    "@blueprintjs/core": {
+      "version": "4.18.0"
+    },
+    "@blueprintjs/docs-theme": {
+      "version": "4.5.16"
+    },
+    "@blueprintjs/select": {
+      "version": "4.9.14"
+    },
+    "@blueprintjs/table": {
+      "version": "4.10.1"
+    },
+    "@testing-library/jest-dom": {
+      "version": "5.16.5"
+    },
+    "@testing-library/react": {
+      "version": "13.4.0"
+    },
+    "@testing-library/user-event": {
+      "version": "13.5.0"
+    },
+    "@types/jest": {
+      "version": "27.5.2"
+    },
+    "@types/node": {
+      "version": "16.18.25"
+    },
+    "@types/react-dom": {
+      "version": "18.2.1"
+    },
+    "@types/react-router-dom": {
+      "version": "5.3.3"
+    },
+    "@types/react": {
+      "version": "18.2.0"
+    },
+    "cors": {
+      "version": "2.8.5"
+    },
+    "decompress": {
+      "version": "4.2.1"
+    },
+    "express-fileupload": {
+      "version": "1.4.0"
+    },
+    "express": {
+      "version": "4.18.2"
+    },
+    "js-file-download": {
+      "version": "0.4.12"
+    },
+    "jszip": {
+      "version": "3.10.1"
+    },
+    "localforage": {
+      "version": "1.10.0"
+    },
+    "match-sorter": {
+      "version": "6.3.1"
+    },
+    "node-releases": {
+      "version": "2.0.10"
+    },
+    "react-axios": {
+      "version": "2.0.6"
+    },
+    "react-dom": {
+      "version": "18.2.0"
+    },
+    "react-papaparse": {
+      "version": "4.1.0"
+    },
+    "react-router-dom": {
+      "version": "6.11.0"
+    },
+    "react-scripts": {
+      "version": "5.0.1"
+    },
+    "react-tabs": {
+      "version": "6.0.1"
+    },
+    "react": {
+      "version": "18.2.0"
+    },
+    "sort-by": {
+      "version": "1.2.0"
+    },
+    "typescript": {
+      "version": "4.9.5"
+    },
+    "web-vitals": {
+      "version": "2.1.4"
+    }
+  }
+}
