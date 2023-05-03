@@ -253,4 +253,3 @@ export default MDKEditor;
 function nav(arg0: string) {
 	throw new Error("Function not implemented.");
 }
-
