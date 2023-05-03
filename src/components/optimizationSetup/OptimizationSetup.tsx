@@ -84,7 +84,6 @@ const OptimizationSetupPopup: React.FC<{isPopupOpen: boolean}> = ({isPopupOpen})
 
     const handleRunPowerSynth = () => {
         console.log('Running PowerSynth!')
-        //window.open("/", '_self');
         setIsOptionOneOpen(false);
         setIsOptionTwoOpen(false);
         setIsOptionThreeOpen(false);

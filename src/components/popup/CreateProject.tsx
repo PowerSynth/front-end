@@ -8,11 +8,13 @@ import { Overlay, Classes, Button, Card } from "@blueprintjs/core";
 import InitialStructureAndLayout from "../InitialStructureAndLayout";
 import "@blueprintjs/core/lib/css/blueprint.css";
 import "./popup.css";
+import { useNavigate } from "react-router-dom";
 
 const CreateProject: React.FC<{ popupIsOpen: any; closePopup: any }> = ({
 	popupIsOpen,
 	closePopup,
 }) => {
+	const nav = useNavigate();
 	const [isInitialStructureAndLayoutOpen, setInitialStructureAndLayoutOpen] =
 		useState(false);
 
@@ -21,6 +23,7 @@ const CreateProject: React.FC<{ popupIsOpen: any; closePopup: any }> = ({
 		console.log("Edit Materials Pressed");
 		//go to MDKEditor page
 		window.open("/mdk-editor", "_self");
+		nav("/mdk-editor");
 	};
 
 	//Handle user clicking 'Defualt Materials' button, should route to initial structure and layout
@@ -33,7 +36,8 @@ const CreateProject: React.FC<{ popupIsOpen: any; closePopup: any }> = ({
 	};
 
 	const handleCreateLayout = () => {
-		window.open("/edit-layer-stack", "_self");
+		console.log("Create Layout Pressed");
+		nav("/edit-layer-stack");
 	};
 
 	return (
