@@ -8,6 +8,7 @@ import "./TablePages.css";
 import "@blueprintjs/core/lib/css/blueprint.css";
 import "@blueprintjs/table/lib/css/table.css";
 import "@blueprintjs/popover2/lib/css/blueprint-popover2.css";
+import { useNavigate } from "react-router-dom";
 
 // TODO FIX EMPTY INITIAL CELL NOT UPDATING CORRECTLY ON TABLE (JSON UPDATES CORRECTLY)
 interface TableData1 {
@@ -28,12 +29,15 @@ const EditLayerStack: React.FC = () => {
 	const [layerStackData, setlayerStackData] =
 		useState<TableData1[]>(initialLayerStack);
 
+	const nav = useNavigate();
+
 	const handleContinue = () => {
 		console.log("Continue Button");
 		// UNPARSE DATA INTO CSV FORMAT BEFORE NEXT PAGE
 		const layerStackCSV = Papa.unparse(layerStackData);
 		console.log(layerStackCSV);
-		window.open("/edit-constraints", "_self");
+		// react router to edit-layer-stack
+		nav("/edit-constraints");
 	};
 
 	return (
