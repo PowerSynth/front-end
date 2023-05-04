@@ -36,7 +36,7 @@ const MDKEditor: React.FC = () => {
 		console.log("Continue");
 		const mdkCSV = Papa.unparse(MDKData);
 		console.log(mdkCSV);
-		nav("/~cap22/edit-layer-stack");
+		nav("/edit-layer-stack");
 	};
 
 	const [MDKData, setMDKData] = useState<MDKDataFace[]>([]);

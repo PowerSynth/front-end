@@ -22,7 +22,6 @@ const CreateProject: React.FC<{ popupIsOpen: any; closePopup: any }> = ({
 	const handleEditMaterials = () => {
 		console.log("Edit Materials Pressed");
 		//go to MDKEditor page
-		window.open("/mdk-editor", "_self");
 		nav("/mdk-editor");
 	};
 

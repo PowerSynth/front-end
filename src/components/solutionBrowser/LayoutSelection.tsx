@@ -12,11 +12,13 @@ import {
 	Checkbox,
 } from "@blueprintjs/core";
 import FileDownload from "js-file-download";
+import { redirect, useNavigate } from "react-router-dom";
 
 const LayoutSelection: React.FC<{ imageFiles: any }> = ({ imageFiles }) => {
 	const [isExitPopupOpen, setIsExitPopupOpen] = useState(false);
 	const [isExportAllOpen, setIsExportAllOpen] = useState(false);
 	const [itemsToDownload, setItemsToDownload] = useState<{ name: any }[]>([]);
+	const nav = useNavigate();
 
 	//Handle user opening exit popup
 	const handleExit = () => {
@@ -26,6 +28,7 @@ const LayoutSelection: React.FC<{ imageFiles: any }> = ({ imageFiles }) => {
 	//Handle user clicking exit
 	const handlePopupExit = () => {
 		setIsExitPopupOpen(false);
+		nav("/");
 	};
 
 	//Handle cancelling the exit
@@ -68,7 +71,8 @@ const LayoutSelection: React.FC<{ imageFiles: any }> = ({ imageFiles }) => {
 			<div className="solutions-browser-item-body">
 				<div className="solution-space">
 					<ul className="selection-list">
-						{imageFiles &&
+						{
+							imageFiles &&
 							imageFiles.map((i: any) => (
 								<li className={"selection-list-item"} key={i.name}>
 									<div className="selection-list-item-elements">{i.name}</div>
@@ -111,35 +115,37 @@ const LayoutSelection: React.FC<{ imageFiles: any }> = ({ imageFiles }) => {
 					<Button text="Exit" onClick={handleExit} />
 				</div>
 			</div>
-			{isExitPopupOpen && (
-				<Overlay
-					className={Classes.OVERLAY_SCROLL_CONTAINER}
-					isOpen={isExitPopupOpen}
-				>
-					<div className="popup-container">
-						<Card className="popup-card">
-							<div className="popup-title">
-								<p>Exit</p>
-							</div>
-							<div className="popup-container">
-								Are you sure you want to exit?
-							</div>
-							<div className="buttons-container">
-								<Button
-									className="welcome-page-button"
-									text="Cancel"
-									onClick={handlePopupCancel}
-								/>
-								<Button
-									className="welcome-page-button"
-									text="Exit"
-									onClick={handlePopupExit}
-								/>
-							</div>
-						</Card>
-					</div>
-				</Overlay>
-			)}
+			{
+				isExitPopupOpen && (
+					<Overlay
+						className={Classes.OVERLAY_SCROLL_CONTAINER}
+						isOpen={isExitPopupOpen}
+					>
+						<div className="popup-container">
+							<Card className="popup-card">
+								<div className="popup-title">
+									<p>Exit</p>
+								</div>
+								<div className="popup-container">
+									Are you sure you want to exit?
+								</div>
+								<div className="buttons-container">
+									<Button
+										className="welcome-page-button"
+										text="Cancel"
+										onClick={handlePopupCancel}
+									/>
+									<Button
+										className="welcome-page-button"
+										text="Exit"
+										onClick={handlePopupExit}
+									/>
+								</div>
+							</Card>
+						</div>
+					</Overlay>
+				)
+			}
 		</div>
 	);
 };

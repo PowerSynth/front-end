@@ -37,7 +37,7 @@ const EditLayerStack: React.FC = () => {
 		const layerStackCSV = Papa.unparse(layerStackData);
 		console.log(layerStackCSV);
 		// react router to edit-layer-stack
-		nav("/edit-layer-stack");
+		nav("/edit-constraints");
 	};
 
 	return (
